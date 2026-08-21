@@ -1,0 +1,123 @@
+function doPost(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+  try {
+    // Confirm that a request object exists
+    if (!e) {
+      throw new Error("No request object received.");
+    }
+
+    console.log("doPost started");
+
+    // Log what Apps Script actually received
+    console.log("Parameters: " + JSON.stringify(e.parameter || {}));
+
+    const name = e.parameter?.name || "";
+    const email = e.parameter?.email || "";
+    const phone = e.parameter?.phone || "";
+    const position = e.parameter?.position || "";
+    const message = e.parameter?.message || "";
+
+    console.log("Name: " + name);
+    console.log("Email: " + email);
+
+    let cvUrl = "";
+
+    // CV
+    if (e.parameter?.cvData && e.parameter?.cvName) {
+
+      console.log("CV detected: " + e.parameter.cvName);
+
+      const folder = DriveApp.getFolderById(
+        "1JVZNJYZU1qFd1n-6oTV2UiP7tB8QpUsx"
+      );
+
+      const decoded = Utilities.base64Decode(e.parameter.cvData);
+
+      const blob = Utilities.newBlob(
+        decoded,
+        e.parameter.cvType || "application/octet-stream",
+        e.parameter.cvName
+      );
+
+      const file = folder.createFile(blob);
+
+      cvUrl = file.getUrl();
+
+      console.log("CV created: " + cvUrl);
+    } else {
+      console.log("NO CV DATA RECEIVED");
+    }
+
+    // Sheet
+    sheet.appendRow([
+      new Date(),
+      name,
+      email,
+      phone,
+      position,
+      message,
+      cvUrl
+    ]);
+
+    console.log("SHEET ROW CREATED");
+
+    // Email
+    GmailApp.sendEmail(
+      "tesfola247@gmail.com",
+      "New Job Application - " + position,
+      "A new job application has been received.\n\n" +
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n" +
+      "Phone: " + phone + "\n" +
+      "Position: " + position + "\n\n" +
+      "Cover Letter / Message:\n" +
+      message + "\n\n" +
+      "CV:\n" +
+      (cvUrl || "No CV uploaded")
+    );
+
+    console.log("EMAIL SENT");
+
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        success: true
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+
+    console.error("ERROR: " + error.toString());
+
+    // Write diagnostic information to the sheet
+    try {
+      sheet.getRange("I1").setValue("LAST ERROR");
+      sheet.getRange("I2").setValue(error.toString());
+    } catch (sheetError) {
+      console.error("Could not write diagnostic error: " + sheetError);
+    }
+
+    throw error;
+  }
+}
+
+
+function authorizeFullDrive() {
+  const folder = DriveApp.getFolderById(
+    "1JVZNJYZU1qFd1n-6oTV2UiP7tB8QpUsx"
+  );
+
+  // This actually tests the permission needed by createFile()
+  const testBlob = Utilities.newBlob(
+    "Drive permission test",
+    "text/plain",
+    "permission-test.txt"
+  );
+
+  const testFile = folder.createFile(testBlob);
+
+  Logger.log("SUCCESS: " + testFile.getUrl());
+
+  // Remove the test file
+  testFile.setTrashed(true);
+}
