@@ -1,0 +1,56 @@
+function doPost(e) {
+  try {
+    // Get the spreadsheet this script is attached to
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+
+    // Get form data
+    const name = e.parameter.name || "";
+    const email = e.parameter.email || "";
+    const phone = e.parameter.phone || "";
+    const position = e.parameter.position || "";
+    const message = e.parameter.message || "";
+
+    // Add application to Google Sheet
+    sheet.appendRow([
+      new Date(),
+      name,
+      email,
+      phone,
+      position,
+      message,
+      ""
+    ]);
+
+    // CHANGE THIS to the email address where you want notifications
+    const notificationEmail = "YOUR_EMAIL@gmail.com";
+
+    // Send notification
+    GmailApp.sendEmail(
+      notificationEmail,
+      "New Job Application - " + position,
+      "A new job application has been received.\n\n" +
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n" +
+      "Phone: " + phone + "\n" +
+      "Position: " + position + "\n\n" +
+      "Cover Letter / Message:\n" + message + "\n\n" +
+      "Open your Google Sheet to view the application."
+    );
+
+    // Send response back to website
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        success: true,
+        message: "Application submitted successfully."
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        success: false,
+        error: error.toString()
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
