@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern and responsive construction website template built for construction, interior design, handyman, plumber, renovation and maintenance businesses. Clean design, fast performance and SEO optimized for professional service websites.">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.svg">
+    <title>Career ConstX | Construction Building & Renovation HTML Template</title>
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900&display=swap">
+    </noscript>
+
+    <!-- fontawesome css -->
+    <link rel="preload" href="assets/css/plugins/fontawesome.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/swiper.css" as="style" onload="this.rel='stylesheet'">
+    <!-- <link rel="preload" href="assets/css/plugins/aos.css" as="style" onload="this.rel='stylesheet'"> -->
+    <link rel="preload" href="assets/css/plugins/unicons.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/metismenu.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/magnific-popup.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/hover-revel.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/timepickers.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/odometer.css" as="style" onload="this.rel='stylesheet'">
+    <!-- bootstrap css -->
+    <link rel="preload" href="assets/css/vendor/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" as="image" href="assets/images/about/safety-banner-1.webp">
+
+    <style>
+        .slider-img-seven {
+            background: url(../images/banner/12.webp);
+        }
+    </style>
+
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #7b69d8;
+  --purple-light: #eeeaff;
+  --text: #282631;
+  --muted: #8b8795;
+  --border: #e8e6ec;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.topbar {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  padding: 0 28px;
+  border-bottom: 1px solid #f1f0f3;
+  background: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.brand-mark {
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  color: white;
+  font-size: 31px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #7773e6, #6e7bd9);
+}
+
+.page {
+  min-height: calc(100vh - 82px);
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(400px, 1fr);
+  gap: 34px;
+  padding: 70px 5.6%;
+}
+
+.video-section {
+  min-width: 0;
+}
+
+.video-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.55 / 1;
+  min-height: 400px;
+  overflow: hidden;
+  border-radius: 25px;
+  background: #e9e8e8;
+}
+
+#cameraPreview {
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #7f7b85;
+  background: radial-gradient(
+    circle at 50% 35%,
+    #f5f4f3 0,
+    #e8e6e5 52%,
+    #dedcdb 100%
+  );
+}
+
+.placeholder-icon {
+  width: 74px;
+  height: 74px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: #aaa6a9;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.video-placeholder p {
+  margin: 0 0 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.video-placeholder small {
+  font-size: 13px;
+  color: #96919a;
+}
+
+.name-overlay {
+  position: absolute;
+  left: 23px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 15px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.more-button {
+  border: 0;
+  padding: 3px;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+.device-controls {
+  display: flex;
+  gap: 13px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.device-status {
+  height: 40px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e3e1e5;
+  border-radius: 7px;
+  background: white;
+  color: #66616d;
+  font-size: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #9ca3af;
+  display: inline-block;
+}
+
+.device-status.active .status-dot {
+  background: #22c55e;
+}
+
+.device-status.inactive .status-dot {
+  background: #ef4444;
+}
+
+.join-panel {
+  min-height: 500px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.join-content {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.join-content h1 {
+  margin: 0 0 39px;
+  font-size: clamp(27px, 2.4vw, 39px);
+  font-weight: 400;
+  letter-spacing: -1.2px;
+}
+
+.host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 39px;
+}
+
+.host-avatar {
+  width: 51px;
+  height: 51px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 21px;
+  font-weight: 500;
+  background: linear-gradient(145deg, #6e5e50, #b69b84);
+  margin-bottom: 12px;
+}
+
+.host p {
+  margin: 0;
+  color: #9b97a0;
+  font-size: 13px;
+}
+
+.join-button {
+  min-width: 108px;
+  height: 49px;
+  padding: 0 23px;
+  border: 2px solid #b9afea;
+  border-radius: 7px;
+  background: white;
+  color: #8171ca;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(103, 88, 176, 0.12);
+  transition: 0.2s ease;
+}
+
+.join-button:hover {
+  background: var(--purple-light);
+  border-color: var(--purple);
+}
+
+.interview-content {
+  display: none;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.interview-header {
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.interview-header h2 {
+  margin: 0 0 7px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.interview-header div div {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.countdown {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.countdown span {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+
+.countdown strong {
+  font-size: 20px;
+  font-weight: 600;
+  color: #282631;
+}
+
+.countdown.warning strong {
+  color: #ef4444;
+}
+
+.question-area {
+  flex: 1;
+  min-height: 0;
+  padding: 30px 28px;
+  overflow-y: auto;
+}
+
+.typing {
+  display: none;
+  color: #8b8795;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.typing span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #aaa6ad;
+  border-radius: 50%;
+  margin-left: 3px;
+  animation: bounce 1.2s infinite;
+}
+
+.typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-5px);
+  }
+}
+
+.question {
+  font-size: 21px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.recording-section {
+  padding: 20px 28px 70px;
+  border-top: 1px solid var(--border);
+  background: white;
+}
+
+.timer {
+  display: none;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+#audioPlayer {
+  display: none;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.record-button,
+.stop-button,
+.next-button {
+  width: 100%;
+  height: 46px;
+  border: 0;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.record-button {
+  background: #BA2300;
+  color: white;
+}
+
+.record-button:hover {
+  background: #dc2626;
+}
+
+.stop-button {
+  display: none;
+  background: #282631;
+  color: white;
+}
+
+.next-button {
+  display: none;
+  background: #5600C7;
+  color: white;
+}
+
+.next-button:hover {
+  background: #6A05F0;
+}
+
+.call-controls {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: white;
+}
+
+.round-control,
+.leave-button {
+  height: 42px;
+  border: 1px solid var(--border);
+  background: white;
+  border-radius: 22px;
+  padding: 0 17px;
+  cursor: pointer;
+}
+
+.round-control {
+  width: 42px;
+  padding: 0;
+}
+
+.leave-button {
+  color: #b64e4e;
+}
+
+.completed {
+  display: none;
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #f5f7fb;
+}
+
+.completed-card {
+  background: white;
+  padding: 50px;
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.completed-card h1 {
+  margin: 0 0 10px;
+}
+
+.completed-card p {
+  color: #6b7280;
+}
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+    padding: 40px 24px 60px;
+  }
+
+  .join-panel {
+    min-height: 600px;
+  }
+
+  .video-card {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar {
+    height: 70px;
+    padding: 0 18px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    font-size: 27px;
+  }
+
+  .page {
+    padding: 24px 14px 45px;
+    gap: 10px;
+  }
+
+  .video-card {
+    min-height: 250px;
+    border-radius: 18px;
+  }
+
+  .device-controls {
+    gap: 7px;
+  }
+
+  .device-status {
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .join-panel {
+    min-height: 300px;
+  }
+
+  .recording-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .question-area {
+    padding: 25px 18px;
+  }
+
+  .interview-header {
+    padding: 20px 18px;
+  }
+
+  .countdown strong {
+    font-size: 17px;
+  }
+}
+
+
+.before-begin {
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto 28px;
+  padding: 18px 20px;
+  text-align: left;
+  background: #faf9fc;
+  border: 1px solid #ebe8f1;
+  border-radius: 12px;
+}
+
+.before-begin h3,
+.interview-guidelines h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.before-begin ul,
+.interview-guidelines ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.before-begin li,
+.interview-guidelines li {
+  margin-bottom: 7px;
+  color: #77727f;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.before-begin li:last-child,
+.interview-guidelines li:last-child {
+  margin-bottom: 0;
+}
+
+.recording-notice {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  color: #55505d;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.recording-description {
+  margin-top: 5px;
+  color: #96919d;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.interview-guidelines {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .before-begin {
+    max-width: 500px;
+  }
+}
+
+
+
+.recording-indicator {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border-radius: 7px;
+  background: rgba(0,0,0,.55);
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+}
+
+.recording-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: recordingPulse 1.5s infinite;
+}
+
+@keyframes recordingPulse {
+  0%,100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .35;
+  }
+}
+
+.recording-indicator {
+  display: none;
+}
+
+.video-card.recording .recording-indicator {
+  display: flex;
+}
+
+.progress{
+    padding: 10px;
+    align-items: center;
+}
+    </style>
+
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+
+
+<body>
+
+
+    <!-- Header Start -->
+    <div class="loader-wrapper">
+        <div class="loader">
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+   <!-- header srea start -->
+    <header class="header-one header-four header--sticky header-sticky-smooth">
+        <!-- header top -->
+        <div class="header-top overflow-visible">
+            <div class="container-header">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-top-wrapper">
+                            <!-- left area header top -->
+                            <div class="left">
+                                <!-- single map area -->
+                                <div class="single-component info-con">
+                                    <div class="icon">
+                                        <i class="fal fa-clock"></i>
+                                    </div>
+                                    <div class="info">
+                                        <span>Sun - Fri (7:00 - 18:00)</span>
+                                    </div>
+                                </div>
+                                <!-- single map area -->
+                                <!-- single map area -->
+                                <div class="single-component info-con">
+                                    <div class="icon">
+                                        <i class="fal fa-phone"></i>
+                                    </div>
+                                    <div class="info">
+                                        <span><a href="call-to:00449922299">+0044 9922299</a></span>
+                                    </div>
+                                </div>
+                                <!-- single map area -->
+                                <!-- single map area -->
+                                <div class="single-component info-con">
+                                    <div class="icon">
+                                        <i class="fal fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="info">
+                                        <span>22 Sterling Close, Winchester, W23 4FD</span>
+                                    </div>
+                                </div>
+                                <!-- single map area -->
+                            </div>
+                            <!-- right area strat -->
+                            <div class="right">
+                                <ul class="social-wrapper-1 hover-bg-white">
+                                    <li class="single"><a target="_blank" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li class="single"><a target="_blank" href="https://x.com/"><i class="fab fa-twitter"></i></a></li>
+                                    <li class="single"><a target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                                    <li class="single"><a target="_blank" href="https://dribbble.com/"><i class="fal fa-globe"></i></a></li>
+                                </ul>
+
+                                <div class="header-info ml--10">
+                                    <ul class="tmp-dropdown-menu switcher-language">
+                                        <li class="has-child-menu">
+                                            <a href="#">
+                                                <img class="left-image" src="assets/images/others/en-us.png" alt="Language Images">
+                                                <span class="menu-item">English</span>
+                                                <i class="right-icon fa-solid fa-chevron-down"></i>
+                                            </a>
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="left-image" src="assets/images/others/fr.png" alt="Language Images">
+                                                        <span class="menu-item">Français</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <img class="left-image" src="assets/images/others/de.png" alt="Language Images">
+                                                        <span class="menu-item">Deutsch</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="header-info ml--5">
+                                    <ul class="tmp-dropdown-menu switcher-language">
+                                        <li class="has-child-menu">
+                                            <a href="#">
+                                                <span class="menu-item">USD</span>
+                                                <i class="right-icon fa-solid fa-chevron-down"></i>
+                                            </a>
+                                            <ul class="sub-menu hover-reverse">
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="menu-item">EUR</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="menu-item">GBP</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header bottom -->
+        <!-- header style hear -->
+        <div class="header-main header-main-2">
+            <div class="container-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-mid-one-wrapper wrapper-two">
+                            <div class="logo-area">
+                                <a href="index.html">
+                                    <img src="assets/images/logo/02-main.svg" alt="logo">
+                                </a>
+                            </div>
+                            <div class="nav-area">
+                                <ul class="mainmenu">
+                                    <li class="main-nav has-dropdow has-menu-child-ite mega-menu">
+                                        <a href="index.html">Home</a>
+                                        <!--<div class="tmp-mega-menu with-home-demos">
+                                            <div class="wrapper demos-area-drop-down">
+                                                <div class="row row--0">
+                                                    <div class="col-lg-12">
+
+                                                        <ul class="mega-menu-item">
+                                                            <li>
+                                                                <a href="index.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/01.webp" alt="">
+                                                                </a>
+                                                                <a href="index.html">Construction Company <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-two.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/02.webp" alt="">
+                                                                </a>
+                                                                <a href="index-two.html">Home Renovation <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-eleven.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/11.webp" alt="">
+                                                                </a>
+                                                                <a href="index-eleven.html">Renovation Classic <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-twelve.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/12.webp" alt="">
+                                                                </a>
+                                                                <a href="index-twelve.html">Factory & Industrial <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="index-three.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/03.webp" alt="">
+                                                                </a>
+                                                                <a href="index-three.html">Construction Services <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-four.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/04.webp" alt="">
+                                                                </a>
+                                                                <a href="index-four.html">Elevate Builders <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-five.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/05.webp" alt="">
+                                                                </a>
+                                                                <a href="index-five.html">Modern Construction <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-six.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/06.webp" alt="">
+                                                                </a>
+                                                                <a href="index-six.html">Demo Construction <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-seven.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/07.webp" alt="">
+                                                                </a>
+                                                                <a href="index-seven.html">Construction Shop <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-eight.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/08.webp" alt="">
+                                                                </a>
+                                                                <a href="index-eight.html">Eco Build <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="index-eighteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/18.webp" alt="">
+                                                                </a>
+                                                                <a href="index-eighteen.html">Industrial Solutions <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-nine.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/09.webp" alt="">
+                                                                </a>
+                                                                <a href="index-nine.html">Building & Structure <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-ten.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/10.webp" alt="">
+                                                                </a>
+                                                                <a href="index-ten.html">Horizon Constructions <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-thirteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/13.webp" alt="">
+                                                                </a>
+                                                                <a href="index-thirteen.html">Remodeling & Renovation <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-fourteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/14.webp" alt="">
+                                                                </a>
+                                                                <a href="index-fourteen.html">Architecture & Interior <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-fifteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/15.webp" alt="">
+                                                                </a>
+                                                                <a href="index-fifteen.html">Construction Video Showcase <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-sixteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/16.webp" alt="">
+                                                                </a>
+                                                                <a href="index-sixteen.html">Engineering Services <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-seventeen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/17.webp" alt="">
+                                                                </a>
+                                                                <a href="index-seventeen.html">Handyman Workshop <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-nineteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/19.webp" alt="">
+                                                                </a>
+                                                                <a href="index-nineteen.html">Investor Demo <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-twenty.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/20.webp" alt="">
+                                                                </a>
+                                                                <a href="index-twenty.html">Carpenter Services <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                        </ul>
+
+                                                        <div class="load-demo-btn-wrap ptb--10">
+                                                            <div class="load-demo-btn text-center">
+                                                                <span class="color-white b3">Scroll to view more 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"></path>
+                                        </svg>
+                                    </span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>-->
+
+                                    </li>
+
+                                    <li class="main-nav has-dropdow has-menu-child-ite mega-menu">
+                                        <a href="about.html">About Us</a>
+                                        <div class="tmp-mega-menu">
+                                            <div class="wrapper inner-page">
+                                                <div class="container">
+
+                                                    <div class="row g-5">
+
+                                                        <!-- Column 1 : About & Basics -->
+                                                        <div class="col-lg-3">
+                                                            <h3 class="inversweb-short-title">About & Basics</h3>
+                                                            <ul class="mega-menu-item with-list parent-nav">
+                                                                <li><a href="about.html">About Us</a></li>
+                                                                <li><a href="about-2.html">About Us 2</a></li>
+                                                                <li><a href="company-history.html">Company History</a></li>
+                                                                <li><a href="company-value.html">Company Value</a></li>
+                                                                <li><a href="our-vision.html">Our Vision</a></li>
+                                                                <li><a href="working-process.html">Working Process</a></li>
+                                                                <li><a href="safety.html">Safety</a></li>
+                                                                <li><a href="pricing.html">Pricing</a></li>
+                                                                <li><a href="button.html">Button</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <!-- Column 2 : Career & Jobs -->
+                                                        <div class="col-lg-3">
+                                                            <h3 class="inversweb-short-title">Career & Events</h3>
+                                                            <ul class="mega-menu-item with-list parent-nav">
+                                                                <li><a href="career.html">Career</a></li>
+                                                                <li><a href="career-2.html">Career 2</a></li>
+                                                                <li><a href="career-details.html">Career Details</a></li>
+                                                                <li><a href="career-details-2.html">Career Details 2</a></li>
+                                                                <li><a href="application.html">Apply Job</a></li>
+                                                                <li><a href="events.html">Our Events</a></li>
+                                                                <li><a href="events-list.html">Our Events List</a></li>
+                                                                <li><a href="event-details.html">Event Details</a></li>
+                                                                <li><a href="faq.html">Faq's</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <!-- Column 3 : Team & Media -->
+                                                        <div class="col-lg-3">
+                                                            <h3 class="inversweb-short-title">Team & Media</h3>
+                                                            <ul class="mega-menu-item with-list parent-nav">
+                                                                <li><a href="team.html">Team One</a></li>
+                                                                <li><a href="team-two.html">Team Two</a></li>
+                                                                <li><a href="team-three.html">Team Three</a></li>
+                                                                <li><a href="team-four.html">Team Four</a></li>
+                                                                <li><a href="team-details.html">Team Details</a></li>
+                                                                <li><a href="clients.html">Our Clients</a></li>
+                                                                <li><a href="gallery.html">Company Gallery</a></li>
+                                                                <li><a href="before-after.html">Before After</a></li>
+                                                                <li><a href="award.html">Awards</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <!-- Column 4 : Contact, Utility & Legal -->
+                                                        <div class="col-lg-3">
+                                                            <h3 class="inversweb-short-title">Contact & Legal</h3>
+                                                            <ul class="mega-menu-item with-list parent-nav">
+                                                                <li><a href="contact.html">Contact</a></li>
+                                                                <li><a href="contact-2.html">Contact 2</a></li>
+                                                                <li><a href="office-branch.html">Our Office Branch</a></li>
+                                                                <li><a href="sustainability.html">Sustainability</a></li>
+                                                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                                <li><a href="404.html">404</a></li>
+                                                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                                <li><a href="terms-condition.html">Terms & Condition</a></li>
+                                                                <li><a target="_blank" href="http://doc.inversweb.com/constx">Documentation</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                    <li class="main-nav has-dropdow has-menu-child-ite mega-menu position-relative">
+                                        <a href="#">Investors</a>
+                                        <!--<div class="tmp-mega-menu width-small-mega">
+                                            <div class="wrapper">
+
+                                                <div class="row row--15">
+                                                    <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item">
+                                                        <h3 class="tmp-short-title">Service Layout</h3>
+                                                        <ul class="mega-menu-item mb--20">
+                                                            <li><a href="service.html">Service Default</a></li>
+                                                            <li><a href="service-two.html">Service Two Swiper</a></li>
+                                                            <li><a href="service-three.html">Service Card Style</a></li>
+                                                            <li><a href="service-three-four.html">Service Style Four</a></li>
+                                                            <li><a href="service-five.html">Service Swiper Flow</a></li>
+                                                            <li><a href="service-six.html">Service Style Fluid</a></li>
+
+                                                            <li><a href="#">Service Modern <span class="invers-badge-card">Coming</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item">
+                                                        <h3 class="tmp-short-title">Service We Provide</h3>
+                                                        <ul class="mega-menu-item mb--20">
+                                                            <li><a href="service-details.html">Service Details</a></li>
+                                                            <li><a href="service-details-two.html">Service Details Two</a></li>
+                                                            <li><a href="service-details-slide.html">Service Details Slide</a></li>
+                                                            <li><a href="service-details-gallery.html">Service Details Gallery</a></li>
+                                                            <li><a href="service-details-video.html">Service Details Video</a></li>
+                                                            <li><a href="service-details-popup-video.html">Style Video Popup</a></li>
+                                                            <li><a href="service-details-classic.html">Style Classic <span class="invers-badge-card">Hot</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="mega-top-banner">
+                                                            <div class="content">
+                                                                <h4 class="title">Do You Need Custom Service?</h4>
+                                                                <p class="description">Complete Building Solutions for You, All Services in One Place.</p>
+                                                            </div>
+
+                                                            <a href="contact.html" class="tmp-btn btn-primary hover-icon-reverse btn-sm">
+                                                                <span class="icon-reverse-wrapper">
+                                        <span class="btn-text">Contact Us</span>
+                                                                <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                                <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>-->
+                                    </li>
+                                    <li class="main-nav has-dropdow has-menu-child-ite project-a-after">
+                                        <a href="career.html">Careers</a>
+                                        <!--<ul class="submenu parent-nav">
+                                            <li><a href="portfolio.html">Project One</a></li>
+                                            <li><a href="portfolio-two.html">Project Two</a></li>
+                                            <li><a href="portfolio-three.html">Project Three</a></li>
+                                            <li class="has-third-lev">
+                                                <a href="#">Portfolio Details <i class="fa-solid fa-chevron-right"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="portfolio-details.html">Default Style</a></li>
+                                                    <li><a href="portfolio-details-2.html">Default Style Two</a></li>
+                                                    <li><a href="portfolio-details-before-after.html">Before After</a></li>
+                                                    <li><a href="portfolio-details-gallery.html">Formet Gallery</a></li>
+                                                    <li><a href="portfolio-details-video.html">Formet Video</a></li>
+                                                    <li><a href="portfolio-details-slide.html">Formet Slide</a></li>
+                                                    <li><a href="portfolio-details-video-popup.html">Video Popup</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>-->
+                                    </li>
+
+                                    <li class="main-nav has-dropdow has-menu-child-ite project-a-after">
+                                        <a href="#">News</a>
+                                        <!--<ul class="submenu parent-nav">
+
+                                            <li><a href="shop.html">Shop <span class="invers-badge-card">Sale Anything</span></a>
+                                            </li>
+                                            <li><a href="shop-sidebar-left.html">Shop Sidebar</a>
+                                            </li>
+                                            <li><a href="shop-details.html">Shop Details</a>
+                                            </li>
+                                            <li><a href="cart.html">Cart</a>
+                                            </li>
+                                            <li><a href="checkout.html">Checkout</a>
+                                            </li>
+                                            <li><a href="wishlist.html">Wishlist</a>
+                                            </li>
+                                            <li><a href="compare.html">Compare</a>
+                                            </li>
+
+                                            <li class="has-third-lev">
+                                                <a href="#">Dashboard <i class="fa-solid fa-chevron-right"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="my-account.html">My Account</a></li>
+                                                    <li><a href="manage-profile.html">Manage Profile</a></li>
+                                                    <li><a href="my-order.html">My Order</a></li>
+                                                    <li><a href="address-booking.html">Address Booking</a></li>
+                                                    <li><a href="reward-point.html">Reward Point</a></li>
+                                                    <li><a href="follow-wishlist.html">Follow Wishlist</a></li>
+                                                    <li><a href="login.html">Login & Register</a></li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>-->
+                                    </li>
+
+
+                                    <!--<li class="main-nav has-dropdown mega-menu has-menu-child-item position-static">
+                                        <a href="#">Blog</a>
+                                        <div class="tmp-mega-menu width-small-mega mega-card-view">
+                                            <div class="wrapper">
+                                                <div class="row row--15">
+                                                    <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item ">
+                                                        <h3 class="tmp-short-title">Blog Styles</h3>
+                                                        <ul class="mega-menu-item">
+                                                            <li><a href="blog.html">Blog Grid</a></li>
+                                                            <li><a href="blog-list.html">Blog List</a></li>
+                                                            <li><a href="blog-list-2.html">Blog List Two</a></li>
+                                                            <li><a href="blog-list-3.html">Blog List Three</a></li>
+                                                            <li><a href="blog-bento.html">Blog Bento</a></li>
+                                                            <li><a href="blog-bento-2.html">Blog Bento Two</a></li>
+                                                            <li><a href="blog-bento-3.html">Blog Bento Three</a></li>
+                                                            <li><a href="blog-minimal.html">Blog Minimal</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
+                                                        <h3 class="tmp-short-title blink-live">Recent Post</h3>
+                                                        <ul class="mega-menu-item overflow-y-visiblity">
+                                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                                            <li><a href="blog-details-bg-image.html">Blog Details Bg Image</a></li>
+                                                            <li><a href="blog-details-gallery.html">Blog Details Gallery</a></li>
+                                                            <li><a href="blog-details-video.html">Blog Details Video</a></li>
+                                                            <li><a href="blog-details-video-popup.html">Blog Details Video Popup</a></li>
+                                                            <li><a href="blog-details-quote.html">Blog Details Quote</a></li>
+                                                            <li><a href="blog-details-classic.html">Blog Details Classic</a></li>
+                                                            <li><a href="blog-details-classic-video.html">Blog Classic Video</a></li>
+                                                            <li><a href="blog-details-right-sidebar.html">Blog Details Sidebar</a></li>
+                                                            <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
+                                                            <li><a href="#">Minimal Style<span class="invers-badge-card">Coming</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
+                                                        <div class="tmp-ads-wrapper">
+                                                            <a class="d-block" href="blog-details.html"><img src="assets/images/blog/48.webp" alt="Solar Images"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>-->
+
+
+
+                                </ul>
+                            </div>
+                            <div class="header-right">
+                                <div class="cart-search-area">
+                                    <!-- <a href="javascript:void(0)" class="cart-btn cart cart-icon hover-bg-light">
+                                    <img src="assets/images/shop/cart.svg" alt="">
+                                    <span class="bg-green">2</span>
+                                </a> -->
+                                    <a class="search-btn hover-bg-light" href="#canvasSearch" data-bs-toggle="offcanvas">
+                                        <img src="assets/images/shop/search.svg" alt="">
+                                    </a>
+                                    <div class="dot-btn hover-bg-light">
+                                        <!-- <img src="assets/images/shop/dot.svg" alt=""> -->
+                                        <span class="offcanvas-trigger">
+                                        <span class="offcanvas-bars">
+                                            <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- single map area -->
+                                <div class="single-component">
+                                    <a href="contact.html" class="tmp-btn btn-primary button-flip btn-sm">
+                                        <span data-text="Get Started">Get Started</span>
+                                    </a>
+                                    <div class="menu-area d-block" id="menu-btn">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                                                <rect width="18" height="2" fill="#0C0A0A"></rect>
+                                                <rect y="7" width="18" height="2" fill="#0C0A0A"></rect>
+                                                <rect y="14" width="18" height="2" fill="#0C0A0A"></rect>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single map area -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header style hearm end -->
+    </header>
+    <!-- header srea end -->
+
+    <!-- Header End -->
+    <!-- Breadcrumb Start -->
+    <!-- tmp breadcrumba area start -->
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Technical Interview</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<main class="page">
+
+<section class="video-section">
+
+<div class="video-card">
+<video id="cameraPreview" autoplay playsinline muted></video>
+
+<div class="recording-indicator" id="recordingIndicator">
+  <span class="recording-dot"></span>
+  Recording
+</div>
+
+<div class="video-placeholder" id="videoPlaceholder">
+<div class="placeholder-icon">◉</div>
+<p>Camera preview</p>
+<small>Click "Join call" to start your camera</small>
+</div>
+
+<div class="name-overlay">
+<span>You</span>
+<button class="more-button">•••</button>
+</div>
+</div>
+
+<div class="device-controls">
+
+<div class="device-status" id="cameraStatus">
+<span class="status-dot"></span>
+<span>Camera</span>
+</div>
+
+<div class="device-status" id="micStatus">
+<span class="status-dot"></span>
+<span>Microphone</span>
+</div>
+
+<div class="device-status" id="speakerStatus">
+<span class="status-dot"></span>
+<span>Speaker</span>
+</div>
+
+</div>
+
+</section>
+
+<aside class="join-panel" id="joinPanel">
+
+<div class="join-content" id="joinContent">
+
+<h1 id="panelTitle">Ready to join?</h1>
+
+<div class="host">
+<div class="host-avatar">A</div>
+<p id="hostText">Alex is in the call</p>
+</div>
+
+<div class="before-begin">
+  <h3>Before you begin</h3>
+  <ul>
+    <li>This interview will take approximately 25 minutes.</li>
+    <li>Your answers will be recorded and reviewed by the hiring team.</li>
+    <li>Make sure you're in a quiet environment.</li>
+    <li>Speak clearly and take your time when answering.</li>
+    <li>Please complete the interview in one session.</li>
+  </ul>
+</div>
+
+<button class="join-button" id="joinButton">Join call</button>
+
+</div>
+
+<div class="interview-content" id="interviewContent">
+
+<div class="interview-header">
+
+<div class="panel-header">
+  <h2>AI Interviewer</h2>
+
+
+  <div class="progress" id="progress">Question 1 of 6</div>
+</div>
+
+<div class="countdown">
+<span>Time remaining</span>
+<strong id="countdown">25:00</strong>
+</div>
+
+</div>
+
+<div class="question-area">
+
+<div class="typing" id="typing">
+Interviewer is typing
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<div class="question" id="question"></div>
+
+</div>
+
+<div class="recording-section">
+
+<div class="timer" id="timer">00:00</div>
+
+<audio id="audioPlayer" controls></audio>
+
+<button class="record-button" id="recordButton">
+Record Answer
+</button>
+
+<button class="stop-button" id="stopButton">
+Stop Recording
+</button>
+
+<button class="next-button" id="nextButton">
+Next Question
+</button>
+
+<div class="interview-guidelines">
+  <h3>Interview guidelines</h3>
+  <ul>
+    <li>Take your time before answering.</li>
+    <li>Speak clearly and at a comfortable pace.</li>
+    <li>Try to answer each question completely.</li>
+    <li>Use specific examples where possible.</li>
+  </ul>
+</div>
+
+</div>
+
+</div>
+
+<!--<div class="call-controls" id="callControls">
+
+<button class="round-control" id="muteButton">
+🎙
+</button>
+
+<button class="round-control" id="cameraToggle">
+▣
+</button>
+
+<button class="leave-button" id="leaveButton">
+Leave
+</button>
+
+</div>-->
+
+</aside>
+
+</main>
+
+<div class="completed" id="completed">
+
+<div class="completed-card">
+
+<h1 id="completedTitle">Interview Completed</h1>
+
+<p id="completedMessage">
+Thank you for completing the interview.
+</p>
+
+</div>
+
+</div>
+
+<script>
+    const questions=["Tell me about yourself and your professional background.","What attracted you to this position?","Can you describe a challenging problem you faced at work and how you solved it?","What would you consider to be your greatest professional strength?","Tell me about a time you had to work under pressure.","Why do you think you would be a good fit for this role?"];
+
+const joinButton=document.getElementById("joinButton");
+const joinPanel=document.getElementById("joinPanel");
+const videoCard=document.querySelector(".video-card");
+const joinContent=document.getElementById("joinContent");
+const interviewContent=document.getElementById("interviewContent");
+const cameraPreview=document.getElementById("cameraPreview");
+const videoPlaceholder=document.getElementById("videoPlaceholder");
+const question=document.getElementById("question");
+const typing=document.getElementById("typing");
+const progress=document.getElementById("progress");
+const recordButton=document.getElementById("recordButton");
+const stopButton=document.getElementById("stopButton");
+const nextButton=document.getElementById("nextButton");
+const timer=document.getElementById("timer");
+const audioPlayer=document.getElementById("audioPlayer");
+const muteButton=document.getElementById("muteButton");
+const cameraToggle=document.getElementById("cameraToggle");
+const leaveButton=document.getElementById("leaveButton");
+const completed=document.getElementById("completed");
+const completedTitle=document.getElementById("completedTitle");
+const completedMessage=document.getElementById("completedMessage");
+const cameraStatus=document.getElementById("cameraStatus");
+const micStatus=document.getElementById("micStatus");
+const speakerStatus=document.getElementById("speakerStatus");
+const countdown=document.getElementById("countdown");
+const countdownBox=document.querySelector(".countdown");
+
+
+let stream=null;
+let mediaRecorder=null;
+let audioChunks=[];
+let currentQuestion=0;
+let recordingSeconds=0;
+let timerInterval=null;
+let countdownInterval=null;
+let currentAudioURL=null;
+let micEnabled=true;
+let cameraEnabled=true;
+let interviewSeconds=25*60;
+let audioContext = null;
+
+function initAudio() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+}
+
+function playSound(type) {
+  initAudio();
+
+  const oscillator = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+  const now = audioContext.currentTime;
+
+  oscillator.connect(gain);
+  gain.connect(audioContext.destination);
+
+  if (type === "join") {
+    oscillator.frequency.setValueAtTime(600, now);
+    oscillator.frequency.setValueAtTime(850, now + 0.08);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.12, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
+    oscillator.start(now);
+    oscillator.stop(now + 0.2);
+  }
+
+  if (type === "ready") {
+    oscillator.frequency.setValueAtTime(700, now);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.08, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.15);
+    oscillator.start(now);
+    oscillator.stop(now + 0.17);
+  }
+
+  if (type === "record") {
+    oscillator.frequency.setValueAtTime(500, now);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.1, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+    oscillator.start(now);
+    oscillator.stop(now + 0.14);
+  }
+
+  if (type === "stop") {
+    oscillator.frequency.setValueAtTime(500, now);
+    oscillator.frequency.exponentialRampToValueAtTime(250, now + 0.12);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.1, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.15);
+    oscillator.start(now);
+    oscillator.stop(now + 0.17);
+  }
+
+  if (type === "next") {
+    oscillator.frequency.setValueAtTime(550, now);
+    oscillator.frequency.setValueAtTime(750, now + 0.08);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.07, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.15);
+    oscillator.start(now);
+    oscillator.stop(now + 0.17);
+  }
+
+  if (type === "warning") {
+    oscillator.frequency.setValueAtTime(800, now);
+    oscillator.frequency.setValueAtTime(800, now + 0.15);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.12, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+    oscillator.start(now);
+    oscillator.stop(now + 0.2);
+  }
+}
+
+function setStatus(element,working){
+element.classList.remove("active","inactive");
+element.classList.add(working?"active":"inactive");
+}
+
+function checkSpeaker(){
+if(typeof HTMLMediaElement!=="undefined"&&"setSinkId" in HTMLMediaElement.prototype)return true;
+return true;
+}
+
+async function startCall(){
+try{
+initAudio();
+playSound("join");
+
+stream=await navigator.mediaDevices.getUserMedia({video:true,audio:true});
+
+cameraPreview.srcObject=stream;
+cameraPreview.style.display="block";
+videoPlaceholder.style.display="none";
+
+const cameraTrack=stream.getVideoTracks()[0];
+const micTrack=stream.getAudioTracks()[0];
+
+setStatus(cameraStatus,!!cameraTrack&&cameraTrack.readyState==="live");
+setStatus(micStatus,!!micTrack&&micTrack.readyState==="live");
+setStatus(speakerStatus,checkSpeaker());
+
+joinContent.style.display="none";
+interviewContent.style.display="flex";
+joinPanel.classList.add("joined");
+videoCard.classList.add("recording");
+
+startCountdown();
+showQuestion();
+
+}catch(error){
+console.error(error);
+setStatus(cameraStatus,false);
+setStatus(micStatus,false);
+setStatus(speakerStatus,checkSpeaker());
+alert("Please allow access to your camera and microphone to join the interview.");
+}
+}
+
+joinButton.addEventListener("click",startCall);
+
+function showQuestion(){
+clearInterval(timerInterval);
+question.textContent="";
+typing.style.display="block";
+recordButton.style.display="none";
+stopButton.style.display="none";
+nextButton.style.display="none";
+timer.style.display="none";
+audioPlayer.style.display="none";
+recordingSeconds=0;
+timer.textContent="00:00";
+progress.textContent=`Question ${currentQuestion+1} of ${questions.length}`;
+
+setTimeout(()=>{
+typing.style.display="none";
+typeQuestion(questions[currentQuestion]);
+},1000);
+}
+
+function typeQuestion(text){
+let index=0;
+question.textContent="";
+function type(){
+if(index<text.length){
+question.textContent+=text.charAt(index);
+index++;
+setTimeout(type,30);
+}else{
+recordButton.style.display="block";
+playSound("ready");
+}
+}
+type();
+}
+
+recordButton.addEventListener("click",()=>{
+if(!stream){
+alert("Please join the call first.");
+return;
+}
+
+const microphoneTrack=stream.getAudioTracks()[0];
+
+if(!microphoneTrack||microphoneTrack.readyState!=="live"){
+setStatus(micStatus,false);
+alert("Your microphone is no longer available.");
+return;
+}
+
+if(mediaRecorder&&mediaRecorder.state==="recording")return;
+
+const recordingStream=new MediaStream([microphoneTrack]);
+
+try{
+mediaRecorder=new MediaRecorder(recordingStream);
+}catch(error){
+console.error(error);
+alert("Your browser does not support audio recording.");
+return;
+}
+
+audioChunks=[];
+
+mediaRecorder.ondataavailable=event=>{
+if(event.data.size>0)audioChunks.push(event.data);
+};
+
+mediaRecorder.onstop=()=>{
+const audioBlob=new Blob(audioChunks,{type:"audio/webm"});
+
+if(currentAudioURL)URL.revokeObjectURL(currentAudioURL);
+
+currentAudioURL=URL.createObjectURL(audioBlob);
+audioPlayer.src=currentAudioURL;
+audioPlayer.style.display="block";
+nextButton.style.display="block";
+};
+
+mediaRecorder.start();
+playSound("record");
+
+recordButton.style.display="none";
+stopButton.style.display="block";
+timer.style.display="block";
+recordingSeconds=0;
+updateTimer();
+clearInterval(timerInterval);
+timerInterval=setInterval(updateTimer,1000);
+});
+
+stopButton.addEventListener("click",()=>{
+if(mediaRecorder&&mediaRecorder.state==="recording"){
+mediaRecorder.stop();
+playSound("stop");
+}
+stopButton.style.display="none";
+clearInterval(timerInterval);
+});
+
+function updateTimer(){
+recordingSeconds++;
+const minutes=Math.floor(recordingSeconds/60).toString().padStart(2,"0");
+const seconds=(recordingSeconds%60).toString().padStart(2,"0");
+timer.textContent=`${minutes}:${seconds}`;
+}
+
+nextButton.addEventListener("click",()=>{
+playSound("next");
+
+if(mediaRecorder&&mediaRecorder.state==="recording")mediaRecorder.stop();
+
+currentQuestion++;
+
+if(currentQuestion>=questions.length){
+finishInterview("Interview Completed","Thank you for completing the interview.");
+return;
+}
+
+showQuestion();
+});
+
+function startCountdown(){
+interviewSeconds=25*60;
+updateCountdown();
+clearInterval(countdownInterval);
+countdownInterval=setInterval(()=>{
+interviewSeconds--;
+updateCountdown();
+
+if(interviewSeconds<=0){
+clearInterval(countdownInterval);
+
+if(mediaRecorder&&mediaRecorder.state==="recording")mediaRecorder.stop();
+
+finishInterview("Time's Up","The 25-minute interview time has ended.");
+}
+},1000);
+}
+
+function updateCountdown(){
+const minutes=Math.floor(interviewSeconds/60).toString().padStart(2,"0");
+const seconds=(interviewSeconds%60).toString().padStart(2,"0");
+countdown.textContent=`${minutes}:${seconds}`;
+
+if(interviewSeconds<=5*60){
+countdownBox.classList.add("warning");
+}else{
+countdownBox.classList.remove("warning");
+}
+}
+
+muteButton.addEventListener("click",()=>{
+if(!stream)return;
+
+micEnabled=!micEnabled;
+
+stream.getAudioTracks().forEach(track=>{
+track.enabled=micEnabled;
+});
+
+muteButton.textContent=micEnabled?"🎙":"🔇";
+setStatus(micStatus,micEnabled);
+
+});
+
+cameraToggle.addEventListener("click",()=>{
+if(!stream)return;
+
+cameraEnabled=!cameraEnabled;
+
+stream.getVideoTracks().forEach(track=>{
+track.enabled=cameraEnabled;
+});
+
+cameraToggle.textContent=cameraEnabled?"▣":"▢";
+setStatus(cameraStatus,cameraEnabled);
+});
+
+leaveButton.addEventListener("click",()=>{
+if(confirm("Are you sure you want to leave the interview?")){
+finishInterview("Interview Ended","The interview was ended before all questions were completed.");
+}
+});
+
+function finishInterview(title,message){
+clearInterval(timerInterval);
+clearInterval(countdownInterval);
+
+if(mediaRecorder&&mediaRecorder.state==="recording")mediaRecorder.stop();
+
+if(stream){
+stream.getTracks().forEach(track=>track.stop());
+stream=null;
+}
+
+if(currentAudioURL){
+URL.revokeObjectURL(currentAudioURL);
+currentAudioURL=null;
+}
+
+videoCard.classList.remove("recording");
+
+document.querySelector(".page").style.display="none";
+completedTitle.textContent=title;
+completedMessage.textContent=message;
+completed.style.display="flex";
+}
+
+setStatus(cameraStatus,false);
+setStatus(micStatus,false);
+setStatus(speakerStatus,checkSpeaker());
+
+</script>
+
+</body>
+</html>
+    
+
+
+    <!-- jquery js -->
+    <script src="assets/js/plugins/jquery-3.7.1.min.js" defer></script>
+    <!-- jquery ui -->
+
+    <script src="assets/js/vendor/jqueryui.js" defer></script>
+
+    <!-- swiper js -->
+    <script src="assets/js/plugins/swiper.js" defer></script>
+    <!-- metismenu js -->
+    <script src="assets/js/plugins/metismenu.js" defer></script>
+    <!-- waypoint js -->
+    <script src="assets/js/vendor/waypoint.js" defer></script>
+    <!-- waw -->
+    <script src="assets/js/vendor/waw.js" defer></script>
+    <!-- jquery ui js -->
+
+    <!-- magnifying ui js -->
+    <script src="assets/js/plugins/magnific-popup.js" defer></script>
+    <!-- sal animation -->
+    <script src="assets/js/vendor/sal.min.js" defer></script>
+    <!-- bootstrap JS -->
+    <script src="assets/js/plugins/bootstrap.min.js" defer></script>
+    <!-- contact form js -->
+    <script src="assets/js/plugins/contact-form.js" defer></script>
+    <!-- Smooth Scroll js -->
+    <script src="assets/js/plugins/smooth-scroll.js" defer></script>
+
+
+    <!-- gsap js -->
+    <!-- <script src="assets/js/plugins/gsap.min.js" defer></script>
+    <script src="assets/js/plugins/scrolltigger.js" defer></script>
+    <script src="assets/js/plugins/split-text.js" defer></script> -->
+
+
+    <script src="assets/js/plugins/scroll-paralax.js" defer></script>
+
+    <!-- odometer js -->
+    <script src="assets/js/plugins/odometer.js" defer></script>
+    <!-- main js -->
+    <script src="assets/js/main.js" defer></script>
+
+    <!-- header style two End -->
+</body>
+
+</html>
