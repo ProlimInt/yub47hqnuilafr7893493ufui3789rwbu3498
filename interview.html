@@ -40,8 +40,8 @@
         }
     </style>
 
-    <style>
-        * {
+   <style>
+* {
   box-sizing: border-box;
 }
 
@@ -53,24 +53,29 @@
   --border: #e8e6ec;
 }
 
+/* =========================
+   GENERAL
+========================= */
+
 html,
 body {
   margin: 0;
-  min-height: 100%;
+  padding: 0;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   color: var(--text);
   background: #fff;
+  overflow: hidden;
 }
 
-body {
-  min-height: 100vh;
-}
+/* =========================
+   TOPBAR
+========================= */
 
 .topbar {
-  height: 82px;
+  height: 68px;
   display: flex;
   align-items: center;
-  padding: 0 28px;
+  padding: 0 24px;
   border-bottom: 1px solid #f1f0f3;
   background: #fff;
 }
@@ -78,41 +83,55 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 25px;
+  gap: 9px;
+  font-size: 23px;
   font-weight: 500;
   letter-spacing: -0.5px;
 }
 
 .brand-mark {
-  width: 47px;
-  height: 47px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   border-radius: 6px;
   color: white;
-  font-size: 31px;
+  font-size: 27px;
   font-weight: 600;
   background: linear-gradient(135deg, #7773e6, #6e7bd9);
 }
 
+/* =========================
+   PAGE
+========================= */
+
 .page {
-  min-height: calc(100vh - 82px);
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(400px, 1fr);
-  gap: 34px;
-  padding: 70px 5.6%;
+  grid-template-columns: minmax(0, 2fr) minmax(340px, 1fr);
+  gap: 26px;
+
+  padding: 24px 4% 24px;
+
+  height: calc(100vh - 68px);
+  min-height: 0;
+  overflow: hidden;
 }
+
+/* =========================
+   VIDEO SECTION
+========================= */
 
 .video-section {
   min-width: 0;
+  min-height: 0;
 }
 
 .video-card {
   position: relative;
-  width: 100%;
+  width: 90%;
+  height: 90%;
   aspect-ratio: 1.55 / 1;
-  min-height: 400px;
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 25px;
   background: #e9e8e8;
@@ -129,11 +148,14 @@ body {
 .video-placeholder {
   position: absolute;
   inset: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   color: #7f7b85;
+
   background: radial-gradient(
     circle at 50% 35%,
     #f5f4f3 0,
@@ -143,75 +165,106 @@ body {
 }
 
 .placeholder-icon {
-  width: 74px;
-  height: 74px;
+  width: 60px;
+  height: 60px;
+
   display: grid;
   place-items: center;
+
   border-radius: 50%;
+
   color: white;
   background: #aaa6a9;
-  font-size: 30px;
-  margin-bottom: 15px;
+
+  font-size: 25px;
+
+  margin-bottom: 10px;
 }
 
 .video-placeholder p {
-  margin: 0 0 5px;
-  font-size: 18px;
+  margin: 0 0 4px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .video-placeholder small {
-  font-size: 13px;
+  font-size: 12px;
   color: #96919a;
 }
 
 .name-overlay {
   position: absolute;
-  left: 23px;
-  bottom: 20px;
+
+  left: 18px;
+  bottom: 16px;
+
   display: flex;
   align-items: center;
-  gap: 10px;
+
+  gap: 8px;
+
   color: white;
-  font-size: 15px;
+
+  font-size: 14px;
+
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .more-button {
   border: 0;
   padding: 3px;
+
   color: white;
   background: transparent;
+
   cursor: pointer;
+
   letter-spacing: 2px;
 }
+
+/* =========================
+   DEVICE STATUS
+========================= */
 
 .device-controls {
   display: flex;
   gap: 13px;
-  margin-top: 10px;
   flex-wrap: wrap;
+  width: 90%;
+  margin: 10px auto 0;
 }
 
 .device-status {
-  height: 40px;
-  padding: 0 14px;
+  height: 34px;
+
+  padding: 0 11px;
+
   display: flex;
   align-items: center;
-  gap: 8px;
+
+  gap: 7px;
+
   border: 1px solid #e3e1e5;
+
   border-radius: 7px;
+
   background: white;
+
   color: #66616d;
-  font-size: 12px;
+
+  font-size: 11px;
+
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .status-dot {
-  width: 9px;
-  height: 9px;
+  width: 8px;
+  height: 8px;
+
   border-radius: 50%;
+
   background: #9ca3af;
+
   display: inline-block;
 }
 
@@ -223,13 +276,23 @@ body {
   background: #ef4444;
 }
 
+/* =========================
+   JOIN PANEL
+========================= */
+
 .join-panel {
-  min-height: 500px;
+  min-width: 0;
+  min-height: 0;
+
+  height: 100%;
+
   position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  transform: translateY(-25px);
+  overflow: visible;
 }
 
 .join-content {
@@ -239,103 +302,150 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  
 }
 
 .join-content h1 {
-  margin: 0 0 39px;
-  font-size: clamp(27px, 2.4vw, 39px);
+  margin: 0 0 24px;
+
+  font-size: clamp(25px, 2.3vw, 35px);
+
   font-weight: 400;
-  letter-spacing: -1.2px;
+
+  letter-spacing: -1px;
 }
 
 .host {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 39px;
+
+  margin-bottom: 24px;
 }
 
 .host-avatar {
-  width: 51px;
-  height: 51px;
+  width: 45px;
+  height: 45px;
+
   display: grid;
   place-items: center;
+
   border-radius: 50%;
+
   color: white;
-  font-size: 21px;
+
+  font-size: 19px;
+
   font-weight: 500;
+
   background: linear-gradient(145deg, #6e5e50, #b69b84);
-  margin-bottom: 12px;
+
+  margin-bottom: 8px;
 }
 
 .host p {
   margin: 0;
+
   color: #9b97a0;
-  font-size: 13px;
+
+  font-size: 12px;
 }
 
 .join-button {
-  min-width: 108px;
-  height: 49px;
-  padding: 0 23px;
+  min-width: 100px;
+
+  height: 43px;
+
+  padding: 0 20px;
+
   border: 2px solid #b9afea;
+
   border-radius: 7px;
+
   background: white;
+
   color: #8171ca;
-  font-size: 14px;
+
+  font-size: 13px;
+
   cursor: pointer;
+
   box-shadow: 0 2px 5px rgba(103, 88, 176, 0.12);
+
   transition: 0.2s ease;
+  transform: translateY(-10px);
 }
 
 .join-button:hover {
   background: var(--purple-light);
+
   border-color: var(--purple);
 }
+
+/* =========================
+   INTERVIEW
+========================= */
 
 .interview-content {
   display: none;
   width: 100%;
-  height: 100%;
+  flex: 1;
+  min-height: 0;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .interview-header {
-  padding: 24px 28px;
+  padding: 17px 20px;
+
   border-bottom: 1px solid var(--border);
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
-  gap: 20px;
+
+  gap: 15px;
+
+  flex-shrink: 0;
 }
 
 .interview-header h2 {
-  margin: 0 0 7px;
-  font-size: 17px;
+  margin: 0 0 5px;
+
+  font-size: 15px;
+
   font-weight: 500;
 }
 
 .interview-header div div {
-  font-size: 12px;
+  font-size: 11px;
+
   color: var(--muted);
 }
 
 .countdown {
   text-align: right;
+
   flex-shrink: 0;
 }
 
 .countdown span {
   display: block;
-  font-size: 11px;
+
+  font-size: 10px;
+
   color: var(--muted);
-  margin-bottom: 3px;
+
+  margin-bottom: 2px;
 }
 
 .countdown strong {
-  font-size: 20px;
+  font-size: 18px;
+
   font-weight: 600;
+
   color: #282631;
 }
 
@@ -343,27 +453,39 @@ body {
   color: #ef4444;
 }
 
+/* =========================
+   QUESTIONS
+========================= */
+
 .question-area {
   flex: 1;
   min-height: 0;
-  padding: 30px 28px;
-  overflow-y: auto;
+  padding: 25px 10px;
+  overflow-y: aut;  
 }
 
 .typing {
   display: none;
+
   color: #8b8795;
-  font-size: 13px;
-  margin-bottom: 15px;
+
+  font-size: 12px;
+
+  margin-bottom: 10px;
 }
 
 .typing span {
   display: inline-block;
-  width: 6px;
-  height: 6px;
+
+  width: 5px;
+  height: 5px;
+
   background: #aaa6ad;
+
   border-radius: 50%;
+
   margin-left: 3px;
+
   animation: bounce 1.2s infinite;
 }
 
@@ -388,44 +510,64 @@ body {
 }
 
 .question {
-  font-size: 21px;
-  line-height: 1.5;
+  font-size: 18px;
+
+  line-height: 1.4;
+
   font-weight: 600;
 }
 
+/* =========================
+   RECORDING
+========================= */
+
 .recording-section {
-  padding: 20px 28px 70px;
+  flex-shrink: 0;
+  padding: 15px 28px 20px;
   border-top: 1px solid var(--border);
   background: white;
+  margin-top: 70px;
 }
 
 .timer {
   display: none;
+
   text-align: center;
-  font-size: 25px;
+
+  font-size: 21px;
+
   font-weight: 600;
-  margin-bottom: 14px;
+
+  margin-bottom: 10px;
 }
 
 #audioPlayer {
   display: none;
+
   width: 100%;
-  margin-bottom: 14px;
+
+  margin-bottom: 10px;
 }
 
 .record-button,
 .stop-button,
 .next-button {
   width: 100%;
-  height: 46px;
+
+  height: 42px;
+
   border: 0;
-  border-radius: 8px;
-  font-size: 14px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
   cursor: pointer;
 }
 
 .record-button {
   background: #BA2300;
+
   color: white;
 }
 
@@ -435,13 +577,17 @@ body {
 
 .stop-button {
   display: none;
+
   background: #282631;
+
   color: white;
 }
 
 .next-button {
   display: none;
+
   background: #5600C7;
+
   color: white;
 }
 
@@ -449,31 +595,49 @@ body {
   background: #6A05F0;
 }
 
+/* =========================
+   CALL CONTROLS
+========================= */
+
 .call-controls {
   display: none;
+
   position: absolute;
-  bottom: 5px;
+
+  bottom: 4px;
+
   left: 0;
   right: 0;
-  height: 50px;
+
+  height: 44px;
+
   justify-content: center;
+
   align-items: center;
-  gap: 12px;
+
+  gap: 8px;
+
   background: white;
 }
 
 .round-control,
 .leave-button {
-  height: 42px;
+  height: 36px;
+
   border: 1px solid var(--border);
+
   background: white;
-  border-radius: 22px;
-  padding: 0 17px;
+
+  border-radius: 20px;
+
+  padding: 0 13px;
+
   cursor: pointer;
 }
 
 .round-control {
-  width: 42px;
+  width: 36px;
+
   padding: 0;
 }
 
@@ -481,136 +645,55 @@ body {
   color: #b64e4e;
 }
 
-.completed {
-  display: none;
-  position: fixed;
-  inset: 0;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: #f5f7fb;
-}
-
-.completed-card {
-  background: white;
-  padding: 50px;
-  border-radius: 18px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-}
-
-.completed-card h1 {
-  margin: 0 0 10px;
-}
-
-.completed-card p {
-  color: #6b7280;
-}
-
-@media (max-width: 900px) {
-  .page {
-    grid-template-columns: 1fr;
-    padding: 40px 24px 60px;
-  }
-
-  .join-panel {
-    min-height: 600px;
-  }
-
-  .video-card {
-    min-height: 320px;
-  }
-}
-
-@media (max-width: 560px) {
-  .topbar {
-    height: 70px;
-    padding: 0 18px;
-  }
-
-  .brand {
-    font-size: 22px;
-  }
-
-  .brand-mark {
-    width: 40px;
-    height: 40px;
-    font-size: 27px;
-  }
-
-  .page {
-    padding: 24px 14px 45px;
-    gap: 10px;
-  }
-
-  .video-card {
-    min-height: 250px;
-    border-radius: 18px;
-  }
-
-  .device-controls {
-    gap: 7px;
-  }
-
-  .device-status {
-    flex: 1;
-    min-width: 0;
-    justify-content: center;
-  }
-
-  .join-panel {
-    min-height: 300px;
-  }
-
-  .recording-section {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-
-  .question-area {
-    padding: 25px 18px;
-  }
-
-  .interview-header {
-    padding: 20px 18px;
-  }
-
-  .countdown strong {
-    font-size: 17px;
-  }
-}
-
+/* =========================
+   BEFORE INTERVIEW
+========================= */
 
 .before-begin {
   width: 100%;
-  max-width: 390px;
-  margin: 0 auto 28px;
-  padding: 18px 20px;
+
+  max-width: 350px;
+
+  margin: 0 auto 18px;
+
+  padding: 14px 16px;
+
   text-align: left;
+
   background: #faf9fc;
+
   border: 1px solid #ebe8f1;
-  border-radius: 12px;
+
+  border-radius: 10px;
 }
 
 .before-begin h3,
 .interview-guidelines h3 {
-  margin: 0 0 10px;
-  font-size: 14px;
+  margin: 0 0 7px;
+
+  font-size: 13px;
+
   font-weight: 600;
+
   color: var(--text);
 }
 
 .before-begin ul,
 .interview-guidelines ul {
   margin: 0;
-  padding-left: 18px;
+
+  padding-left: 17px;
 }
 
 .before-begin li,
 .interview-guidelines li {
-  margin-bottom: 7px;
+  margin-bottom: 5px;
+
   color: #77727f;
-  font-size: 12px;
-  line-height: 1.5;
+
+  font-size: 11px;
+
+  line-height: 1.4;
 }
 
 .before-begin li:last-child,
@@ -620,82 +703,554 @@ body {
 
 .recording-notice {
   display: flex;
+
   align-items: center;
-  gap: 7px;
-  margin-top: 12px;
+
+  gap: 6px;
+
+  margin-top: 9px;
+
   color: #55505d;
-  font-size: 12px;
+
+  font-size: 11px;
+
   font-weight: 500;
 }
 
 .recording-description {
-  margin-top: 5px;
+  margin-top: 4px;
+
   color: #96919d;
-  font-size: 11px;
-  line-height: 1.4;
+
+  font-size: 10px;
+
+  line-height: 1.35;
 }
 
 .interview-guidelines {
-  margin-top: 20px;
-  padding-top: 18px;
+  margin-top: 14px;
+
+  padding-top: 13px;
+
   border-top: 1px solid var(--border);
 }
 
-@media (max-width: 900px) {
-  .before-begin {
-    max-width: 500px;
-  }
-}
-
-
+/* =========================
+   RECORDING INDICATOR
+========================= */
 
 .recording-indicator {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  display: flex;
+
+  top: 14px;
+
+  right: 14px;
+
+  display: none;
+
   align-items: center;
-  gap: 7px;
-  padding: 7px 11px;
-  border-radius: 7px;
-  background: rgba(0,0,0,.55);
+
+  gap: 6px;
+
+  padding: 6px 9px;
+
+  border-radius: 6px;
+
+  background: rgba(0, 0, 0, 0.55);
+
   color: white;
-  font-size: 12px;
+
+  font-size: 11px;
+
   font-weight: 500;
+
   z-index: 5;
+
   backdrop-filter: blur(4px);
 }
 
 .recording-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+
+  height: 7px;
+
   border-radius: 50%;
+
   background: #ef4444;
+
   animation: recordingPulse 1.5s infinite;
 }
 
 @keyframes recordingPulse {
-  0%,100% {
+  0%,
+  100% {
     opacity: 1;
   }
-  50% {
-    opacity: .35;
-  }
-}
 
-.recording-indicator {
-  display: none;
+  50% {
+    opacity: 0.35;
+  }
 }
 
 .video-card.recording .recording-indicator {
   display: flex;
 }
 
-.progress{
-    padding: 10px;
-    align-items: center;
+/* =========================
+   PROGRESS
+========================= */
+
+.progress {
+  padding: 7px;
+
+  align-items: center;
 }
-    </style>
+
+/* =========================
+   COMPLETED
+========================= */
+
+.completed {
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  background: #f5f7fb;
+}
+
+.completed-card {
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.completed-card h1 {
+  margin: 0 0 8px;
+}
+
+.completed-card p {
+  color: #6b7280;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  html,
+  body {
+    overflow: auto;
+  }
+
+  .topbar {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  .page {
+    display: flex;
+
+    flex-direction: column;
+
+    height: auto;
+
+    min-height: calc(100vh - 60px);
+
+    gap: 18px;
+
+    padding: 18px 22px 20px;
+
+    overflow: visible;
+  }
+
+  .video-section {
+    width: 100%;
+  }
+
+  .video-card {
+    width: 100%;
+
+    aspect-ratio: 1.6 / 1;
+
+    max-height: none;
+  }
+
+  .join-panel {
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    overflow: visible;
+  }
+
+  .join-content {
+    flex: none;
+
+    padding: 5px 0 15px;
+  }
+
+  .join-content h1 {
+    margin-bottom: 18px;
+  }
+
+  .host {
+    margin-bottom: 18px;
+  }
+
+  .before-begin {
+    max-width: 500px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 560px) {
+
+  html,
+  body {
+    overflow: auto;
+  }
+
+  .topbar {
+    height: 56px;
+
+    padding: 0 14px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+
+    font-size: 24px;
+  }
+
+  .page {
+    gap: 12px;
+
+    padding: 12px 12px 15px;
+
+    min-height: calc(100vh - 56px);
+  }
+
+  .video-card {
+    aspect-ratio: 1.5 / 1;
+
+    border-radius: 16px;
+  }
+
+  .placeholder-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+  }
+
+  .video-placeholder p {
+    font-size: 14px;
+  }
+
+  .video-placeholder small {
+    font-size: 11px;
+  }
+
+  .name-overlay {
+    left: 14px;
+    bottom: 12px;
+
+    font-size: 12px;
+  }
+
+  .device-controls {
+    gap: 5px;
+
+    margin-top: 6px;
+  }
+
+  .device-status {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 32px;
+
+    padding: 0 6px;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    gap: 5px;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .join-panel {
+    min-height: 0;
+    transform: translateY(20px);
+  }
+
+  .join-content {
+    padding: 3px 0 10px;
+  }
+
+  .join-content h1 {
+    margin-bottom: 14px;
+
+    font-size: 24px;
+  }
+
+  .host {
+    margin-bottom: 14px;
+  }
+
+  .host-avatar {
+    width: 40px;
+    height: 40px;
+
+    font-size: 17px;
+
+    margin-bottom: 6px;
+  }
+
+  .host p {
+    font-size: 11px;
+  }
+
+  .join-button {
+    height: 40px;
+
+    min-width: 95px;
+
+    font-size: 12px;
+  }
+
+  .before-begin {
+    max-width: 100%;
+
+    margin-bottom: 12px;
+
+    padding: 11px 13px;
+  }
+
+  .before-begin h3,
+  .interview-guidelines h3 {
+    font-size: 12px;
+  }
+
+  .before-begin li,
+  .interview-guidelines li {
+    font-size: 10px;
+
+    margin-bottom: 4px;
+  }
+
+  .recording-notice {
+    font-size: 10px;
+
+    margin-top: 7px;
+  }
+
+  .recording-description {
+    font-size: 9px;
+  }
+
+  .interview-guidelines {
+    margin-top: 10px;
+
+    padding-top: 10px;
+  }
+
+  .interview-header {
+    padding: 13px 15px;
+
+    gap: 10px;
+  }
+
+  .interview-header h2 {
+    font-size: 14px;
+  }
+
+  .interview-header div div {
+    font-size: 10px;
+  }
+
+  .countdown span {
+    font-size: 9px;
+  }
+
+  .countdown strong {
+    font-size: 16px;
+  }
+
+  .question-area {
+    padding: 15px;
+
+    overflow: hidden;
+  }
+
+  .question {
+    font-size: 17px;
+
+    line-height: 1.35;
+  }
+
+  .recording-section {
+    padding: 11px 15px;
+
+    flex-shrink: 0;
+  }
+
+  .record-button,
+  .stop-button,
+  .next-button {
+    height: 40px;
+
+    font-size: 12px;
+  }
+
+  .timer {
+    font-size: 19px;
+
+    margin-bottom: 8px;
+  }
+
+  .call-controls {
+    position: relative;
+
+    bottom: auto;
+
+    left: auto;
+    right: auto;
+
+    height: 40px;
+
+    margin-top: 6px;
+  }
+
+  .round-control,
+  .leave-button {
+    height: 34px;
+  }
+
+  .round-control {
+    width: 34px;
+  }
+
+  .completed-card {
+    width: calc(100% - 30px);
+
+    padding: 25px 18px;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .topbar {
+    height: 52px;
+  }
+
+  .brand {
+    font-size: 18px;
+  }
+
+  .brand-mark {
+    width: 33px;
+    height: 33px;
+
+    font-size: 22px;
+  }
+
+  .page {
+    min-height: calc(100vh - 52px);
+
+    padding: 9px 10px 12px;
+
+    gap: 9px;
+  }
+
+  .video-card {
+    aspect-ratio: 1.55 / 1;
+
+    border-radius: 14px;
+  }
+
+  .device-status {
+    height: 29px;
+
+    font-size: 9px;
+  }
+
+  .join-content h1 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+  }
+
+  .host {
+    margin-bottom: 10px;
+  }
+
+  .host-avatar {
+    width: 36px;
+    height: 36px;
+
+    font-size: 15px;
+  }
+
+  .join-button {
+    height: 37px;
+  }
+
+  .before-begin {
+    padding: 9px 11px;
+  }
+
+  .before-begin li,
+  .interview-guidelines li {
+    font-size: 9px;
+  }
+
+  .question {
+    font-size: 16px;
+  }
+
+  .record-button,
+  .stop-button,
+  .next-button {
+    height: 37px;
+  }
+}
+</style>
 
     <!-- main css -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -1274,17 +1829,6 @@ body {
     <!-- tmp breadcrumba area start -->
 
 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Live Technical Interview</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-
 
 <main class="page">
 
@@ -1838,8 +2382,7 @@ setStatus(speakerStatus,checkSpeaker());
 
 </script>
 
-</body>
-</html>
+
     
 
 
