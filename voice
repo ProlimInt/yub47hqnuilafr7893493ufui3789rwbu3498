@@ -1,0 +1,82 @@
+const ROOT_FOLDER_ID = "1AD4Llzs1mws10fDIIBfcrZl2bLkFF3hM";
+
+function doPost(e) {
+  try {
+    const data = JSON.parse(e.postData.contents);
+
+    if (!data.email || !data.audio) {
+      throw new Error("Missing email or audio data.");
+    }
+
+    const email = String(data.email).trim().toLowerCase();
+
+    // Basic email validation
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      throw new Error("Invalid email address.");
+    }
+
+    const rootFolder = DriveApp.getFolderById(ROOT_FOLDER_ID);
+
+    // Create/find candidate folder
+    const folderName = sanitizeName(email);
+
+    let candidateFolder;
+
+    const folders = rootFolder.getFoldersByName(folderName);
+
+    if (folders.hasNext()) {
+      candidateFolder = folders.next();
+    } else {
+      candidateFolder = rootFolder.createFolder(folderName);
+    }
+
+    // Convert base64 audio back to binary
+    const bytes = Utilities.base64Decode(data.audio);
+
+    const mimeType = data.mimeType || "audio/webm";
+
+    const extension = mimeType.includes("mp4")
+      ? "mp4"
+      : mimeType.includes("ogg")
+      ? "ogg"
+      : "webm";
+
+    const questionNumber = Number(data.questionNumber || 1);
+
+    const fileName =
+      `Question-${questionNumber}-${sanitizeName(data.question || "Answer")}-${Date.now()}.${extension}`;
+
+    const blob = Utilities.newBlob(
+      bytes,
+      mimeType,
+      fileName
+    );
+
+    const file = candidateFolder.createFile(blob);
+
+    return jsonResponse({
+      success: true,
+      fileId: file.getId(),
+      fileName: file.getName(),
+      folderId: candidateFolder.getId()
+    });
+
+  } catch (error) {
+    return jsonResponse({
+      success: false,
+      error: error.message
+    });
+  }
+}
+
+function sanitizeName(value) {
+  return String(value)
+    .replace(/[\/\\:*?"<>|#%{}[\]]/g, "-")
+    .substring(0, 100);
+}
+
+function jsonResponse(data) {
+  return ContentService
+    .createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
+}
