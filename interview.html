@@ -1252,6 +1252,159 @@ body {
 }
 
 
+/* =========================
+   EMAIL MODAL
+========================= */
+
+.email-modal {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 15, 20, 0.55);
+
+    backdrop-filter: blur(5px);
+
+    z-index: 99999;
+}
+
+.email-modal-card {
+    width: 100%;
+    max-width: 410px;
+
+    padding: 32px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.18);
+
+    text-align: center;
+}
+
+.email-modal-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 15px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #fff1eb;
+
+    color: #FF5E14;
+
+    font-size: 23px;
+}
+
+.email-modal-card h2 {
+    margin: 0 0 8px;
+
+    color: #282631;
+
+    font-size: 23px;
+
+    font-weight: 500;
+}
+
+.email-modal-card p {
+    margin: 0 0 22px;
+
+    color: #8b8795;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+#candidateEmail {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dedbe4;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    color: #282631;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+#candidateEmail:focus {
+    border-color: #FF5E14;
+
+    box-shadow: 0 0 0 3px rgba(255, 94, 20, 0.08);
+}
+
+#continueInterviewButton {
+    width: 100%;
+
+    height: 46px;
+
+    margin-top: 14px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: #FF5E14;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#continueInterviewButton:hover {
+    background: #e84f0b;
+}
+
+.email-error {
+    min-height: 18px;
+
+    margin-top: 7px;
+
+    color: #dc2626;
+
+    font-size: 11px;
+
+    text-align: left;
+}
+
+@media (max-width: 560px) {
+
+    .email-modal-card {
+        padding: 25px 20px;
+
+        border-radius: 15px;
+    }
+
+    .email-modal-card h2 {
+        font-size: 21px;
+    }
+}
+
+
 
 
 
@@ -1729,6 +1882,44 @@ body {
 
 
 
+<!-- EMAIL MODAL -->
+<div class="email-modal" id="emailModal">
+
+    <div class="email-modal-card">
+
+        <div class="email-modal-icon">
+            ✉
+        </div>
+
+        <h2>Before you begin</h2>
+
+        <p>
+            Please enter your email address to start the interview.
+        </p>
+
+        <input
+            type="email"
+            id="candidateEmail"
+            placeholder="Enter your email address"
+            autocomplete="email"
+            required
+        >
+
+        <div class="email-error" id="emailError"></div>
+
+        <button
+            type="button"
+            id="continueInterviewButton"
+        >
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+
+
 <main class="page">
 
 <section class="video-section">
@@ -1898,6 +2089,26 @@ Thank you for completing the interview.
 </div>
 
 <script>
+  const GOOGLE_APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwUWuzW6HUDuPwjLLAXhD9MuIEDu3plGq-aX-BI8dwKmAfhI9SEydmZCbEPlH0Ud_E8/exec";
+
+const emailModal =
+  document.getElementById("emailModal");
+
+const candidateEmailInput =
+  document.getElementById("candidateEmail");
+
+const emailError =
+  document.getElementById("emailError");
+
+const continueInterviewButton =
+  document.getElementById("continueInterviewButton");
+
+let candidateEmail = "";
+
+
+
+
     const questions=["Tell me about yourself and your professional background.","What attracted you to this position?","Can you describe a challenging problem you faced at work and how you solved it?","What would you consider to be your greatest professional strength?","Tell me about a time you had to work under pressure.","Why do you think you would be a good fit for this role?"];
 
 const joinButton=document.getElementById("joinButton");
@@ -2065,7 +2276,135 @@ alert("Please allow access to your camera and microphone to join the interview."
 }
 }
 
-joinButton.addEventListener("click",startCall);
+joinButton.addEventListener("click", () => {
+
+    emailError.textContent = "";
+
+    emailModal.style.display = "flex";
+
+    setTimeout(() => {
+        candidateEmailInput.focus();
+    }, 100);
+
+});
+
+
+continueInterviewButton.addEventListener("click", () => {
+
+    const email = candidateEmailInput.value.trim();
+
+    if (!email) {
+        emailError.textContent =
+            "Please enter your email address.";
+        return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailError.textContent =
+            "Please enter a valid email address.";
+        return;
+    }
+
+    candidateEmail = email.toLowerCase();
+
+    emailModal.style.display = "none";
+
+    startCall();
+});
+
+
+candidateEmailInput.addEventListener("keydown", (event) => {
+
+    if (event.key === "Enter") {
+        continueInterviewButton.click();
+    }
+
+});
+
+
+async function uploadRecordingToDrive(audioBlob, questionNumber, questionText) {
+
+    if (!candidateEmail) {
+        console.error("Candidate email is missing.");
+        return false;
+    }
+
+    try {
+
+        console.log(
+            `Uploading answer ${questionNumber}...`
+        );
+
+        const base64Audio =
+            await blobToBase64(audioBlob);
+
+        const payload = {
+            email: candidateEmail,
+
+            questionNumber: questionNumber,
+
+            question: questionText,
+
+            mimeType: audioBlob.type || "audio/webm",
+
+            audio: base64Audio
+        };
+
+        await fetch(GOOGLE_APPS_SCRIPT_URL, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+
+            body: JSON.stringify(payload),
+
+            mode: "no-cors"
+
+        });
+
+        console.log(
+            `Answer ${questionNumber} uploaded.`
+        );
+
+        return true;
+
+    } catch (error) {
+
+        console.error(
+            "Upload failed:",
+            error
+        );
+
+        return false;
+    }
+}
+
+
+
+function blobToBase64(blob) {
+
+    return new Promise((resolve, reject) => {
+
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+
+            const base64 =
+                reader.result.split(",")[1];
+
+            resolve(base64);
+        };
+
+        reader.onerror = reject;
+
+        reader.readAsDataURL(blob);
+    });
+}
+
+
+
 
 function showQuestion(){
 clearInterval(timerInterval);
@@ -2134,16 +2473,57 @@ mediaRecorder.ondataavailable=event=>{
 if(event.data.size>0)audioChunks.push(event.data);
 };
 
-mediaRecorder.onstop=()=>{
-const audioBlob=new Blob(audioChunks,{type:"audio/webm"});
+mediaRecorder.onstop = async () => {
 
-if(currentAudioURL)URL.revokeObjectURL(currentAudioURL);
+    const audioBlob = new Blob(
+        audioChunks,
+        { type: "audio/webm" }
+    );
 
-currentAudioURL=URL.createObjectURL(audioBlob);
-audioPlayer.src=currentAudioURL;
-audioPlayer.style.display="block";
-nextButton.style.display="block";
+    if (currentAudioURL) {
+        URL.revokeObjectURL(currentAudioURL);
+    }
+
+    currentAudioURL =
+        URL.createObjectURL(audioBlob);
+
+    audioPlayer.src = currentAudioURL;
+
+    audioPlayer.style.display = "block";
+
+    // Disable Next while uploading
+    nextButton.disabled = true;
+
+    nextButton.textContent =
+        "Uploading Answer...";
+
+    const uploaded =
+        await uploadRecordingToDrive(
+            audioBlob,
+            currentQuestion + 1,
+            questions[currentQuestion]
+        );
+
+    nextButton.disabled = false;
+
+    nextButton.textContent =
+        "Next Question";
+
+    if (uploaded) {
+
+        nextButton.style.display =
+            "block";
+
+    } else {
+
+        alert(
+            "Your answer could not be uploaded. " +
+            "Please try recording the answer again."
+        );
+
+    }
 };
+
 
 mediaRecorder.start();
 playSound("record");
