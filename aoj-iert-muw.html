@@ -1,0 +1,2750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/14062/14062939.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cdn-icons-png.flaticon.com/128/14062/14062939.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://cdn-icons-png.flaticon.com/128/14062/14062939.png">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern and responsive construction website template built for construction, interior design, handyman, plumber, renovation and maintenance businesses. Clean design, fast performance and SEO optimized for professional service websites.">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/fav.svg">
+    <title>Interview NorthRoy | Mining & Resources</title>
+
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900&display=swap">
+    </noscript>
+
+    <!-- fontawesome css -->
+    <link rel="preload" href="assets/css/plugins/fontawesome.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/swiper.css" as="style" onload="this.rel='stylesheet'">
+    <!-- <link rel="preload" href="assets/css/plugins/aos.css" as="style" onload="this.rel='stylesheet'"> -->
+    <link rel="preload" href="assets/css/plugins/unicons.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/metismenu.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/magnific-popup.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/hover-revel.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/timepickers.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/plugins/odometer.css" as="style" onload="this.rel='stylesheet'">
+    <!-- bootstrap css -->
+    <link rel="preload" href="assets/css/vendor/bootstrap.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" as="image" href="assets/images/about/safety-banner-1.webp">
+
+    <style>
+        .slider-img-seven {
+            background: url(../images/banner/12.webp);
+        }
+    </style>
+
+   <style>
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #7b69d8;
+  --purple-light: #eeeaff;
+  --text: #282631;
+  --muted: #8b8795;
+  --border: #e8e6ec;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+  overflow: hidden;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  border-bottom: 1px solid #f1f0f3;
+  background: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  color: white;
+  font-size: 27px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #7773e6, #6e7bd9);
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(340px, 1fr);
+  gap: 26px;
+
+  padding: 24px 4% 24px;
+
+  height: calc(100vh - 68px);
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* =========================
+   VIDEO SECTION
+========================= */
+
+.video-section {
+  min-width: 0;
+  min-height: 0;
+}
+
+.video-card {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  aspect-ratio: 1.55 / 1;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 25px;
+  background: #e9e8e8;
+}
+
+#cameraPreview {
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #7f7b85;
+
+  background: radial-gradient(
+    circle at 50% 35%,
+    #f5f4f3 0,
+    #e8e6e5 52%,
+    #dedcdb 100%
+  );
+}
+
+.placeholder-icon {
+  width: 60px;
+  height: 60px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: white;
+  background: #aaa6a9;
+
+  font-size: 25px;
+
+  margin-bottom: 10px;
+}
+
+.video-placeholder p {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.video-placeholder small {
+  font-size: 12px;
+  color: #96919a;
+}
+
+.name-overlay {
+  position: absolute;
+
+  left: 18px;
+  bottom: 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: white;
+
+  font-size: 14px;
+
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.more-button {
+  border: 0;
+  padding: 3px;
+
+  color: white;
+  background: transparent;
+
+  cursor: pointer;
+
+  letter-spacing: 2px;
+}
+
+/* =========================
+   DEVICE STATUS
+========================= */
+
+.device-controls {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 10px auto 0;
+}
+
+.device-status {
+  height: 34px;
+
+  padding: 0 11px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  border: 1px solid #e3e1e5;
+
+  border-radius: 7px;
+
+  background: white;
+
+  color: #66616d;
+
+  font-size: 11px;
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #9ca3af;
+
+  display: inline-block;
+}
+
+.device-status.active .status-dot {
+  background: #22c55e;
+}
+
+.device-status.inactive .status-dot {
+  background: #ef4444;
+}
+
+/* =========================
+   JOIN PANEL
+========================= */
+
+.join-panel {
+  min-width: 0;
+  min-height: 0;
+
+  height: 100%;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-25px);
+  overflow: visible;
+}
+
+.join-content {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.join-content h1 {
+  margin: 0 0 24px;
+
+  font-size: clamp(25px, 2.3vw, 35px);
+
+  font-weight: 400;
+
+  letter-spacing: -1px;
+}
+
+.host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.host-avatar {
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  color: white;
+
+  font-size: 19px;
+
+  font-weight: 500;
+
+  background: linear-gradient(145deg, #6e5e50, #b69b84);
+
+  margin-bottom: 8px;
+}
+
+.host p {
+  margin: 0;
+
+  color: #9b97a0;
+
+  font-size: 12px;
+}
+
+.join-button {
+  min-width: 100px;
+
+  height: 43px;
+
+  padding: 0 20px;
+
+  border: 2px solid #FF5E14;
+
+  border-radius: 7px;
+
+  background: white;
+
+  color: #FF5E14;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 5px rgba(103, 88, 176, 0.12);
+
+  transition: 0.2s ease;
+  transform: translateY(-10px);
+}
+
+.join-button:hover {
+    background: #FF5E14;
+    border-color: #FF5E14;
+    color: #fff;
+}
+
+/* =========================
+   INTERVIEW
+========================= */
+
+.interview-content {
+  display: none;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.interview-header {
+  padding: 17px 20px;
+
+  border-bottom: 1px solid var(--border);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+
+  flex-shrink: 0;
+}
+
+.interview-header h2 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+
+  font-weight: 500;
+}
+
+.interview-header div div {
+  font-size: 11px;
+
+  color: var(--muted);
+}
+
+.countdown {
+  text-align: right;
+
+  flex-shrink: 0;
+}
+
+.countdown span {
+  display: block;
+
+  font-size: 10px;
+
+  color: var(--muted);
+
+  margin-bottom: 2px;
+}
+
+.countdown strong {
+  font-size: 18px;
+
+  font-weight: 600;
+
+  color: #282631;
+}
+
+.countdown.warning strong {
+  color: #ef4444;
+}
+
+/* =========================
+   QUESTIONS
+========================= */
+
+.question-area {
+  flex: 1;
+  min-height: 0;
+  padding: 25px 10px;
+  overflow-y: aut;  
+}
+
+.typing {
+  display: none;
+
+  color: #8b8795;
+
+  font-size: 12px;
+
+  margin-bottom: 10px;
+}
+
+.typing span {
+  display: inline-block;
+
+  width: 5px;
+  height: 5px;
+
+  background: #aaa6ad;
+
+  border-radius: 50%;
+
+  margin-left: 3px;
+
+  animation: bounce 1.2s infinite;
+}
+
+.typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+
+  30% {
+    transform: translateY(-5px);
+  }
+}
+
+.question {
+  font-size: 18px;
+
+  line-height: 1.4;
+
+  font-weight: 600;
+}
+
+/* =========================
+   RECORDING
+========================= */
+
+.recording-section {
+  flex-shrink: 0;
+  padding: 15px 28px 20px;
+  border-top: 1px solid var(--border);
+  background: white;
+  margin-top: 70px;
+}
+
+.timer {
+  display: none;
+
+  text-align: center;
+
+  font-size: 21px;
+
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+#audioPlayer {
+  display: none;
+
+  width: 100%;
+
+  margin-bottom: 10px;
+}
+
+.record-button,
+.stop-button,
+.next-button {
+  width: 100%;
+
+  height: 42px;
+
+  border: 0;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+.record-button {
+  background: #BA2300;
+
+  color: white;
+}
+
+.record-button:hover {
+  background: #dc2626;
+}
+
+.stop-button {
+  display: none;
+
+  background: #282631;
+
+  color: white;
+}
+
+.next-button {
+  display: none;
+
+  background: #5600C7;
+
+  color: white;
+}
+
+.next-button:hover {
+  background: #6A05F0;
+}
+
+/* =========================
+   CALL CONTROLS
+========================= */
+
+.call-controls {
+  display: none;
+
+  position: absolute;
+
+  bottom: 4px;
+
+  left: 0;
+  right: 0;
+
+  height: 44px;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  background: white;
+}
+
+.round-control,
+.leave-button {
+  height: 36px;
+
+  border: 1px solid var(--border);
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 0 13px;
+
+  cursor: pointer;
+}
+
+.round-control {
+  width: 36px;
+
+  padding: 0;
+}
+
+.leave-button {
+  color: #b64e4e;
+}
+
+/* =========================
+   BEFORE INTERVIEW
+========================= */
+
+.before-begin {
+  width: 100%;
+
+  max-width: 350px;
+
+  margin: 0 auto 18px;
+
+  padding: 14px 16px;
+
+  text-align: left;
+
+  background: #faf9fc;
+
+  border: 1px solid #ebe8f1;
+
+  border-radius: 10px;
+}
+
+.before-begin h3,
+.interview-guidelines h3 {
+  margin: 0 0 7px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: var(--text);
+}
+
+.before-begin ul,
+.interview-guidelines ul {
+  margin: 0;
+
+  padding-left: 17px;
+}
+
+.before-begin li,
+.interview-guidelines li {
+  margin-bottom: 5px;
+
+  color: #77727f;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+.before-begin li:last-child,
+.interview-guidelines li:last-child {
+  margin-bottom: 0;
+}
+
+.recording-notice {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 9px;
+
+  color: #55505d;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+.recording-description {
+  margin-top: 4px;
+
+  color: #96919d;
+
+  font-size: 10px;
+
+  line-height: 1.35;
+}
+
+.interview-guidelines {
+  margin-top: 14px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid var(--border);
+}
+
+/* =========================
+   RECORDING INDICATOR
+========================= */
+
+.recording-indicator {
+  position: absolute;
+
+  top: 14px;
+
+  right: 14px;
+
+  display: none;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 9px;
+
+  border-radius: 6px;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  z-index: 5;
+
+  backdrop-filter: blur(4px);
+}
+
+.recording-dot {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  animation: recordingPulse 1.5s infinite;
+}
+
+@keyframes recordingPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.video-card.recording .recording-indicator {
+  display: flex;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress {
+  padding: 7px;
+
+  align-items: center;
+}
+
+/* =========================
+   COMPLETED
+========================= */
+
+.completed {
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  background: #f5f7fb;
+}
+
+.completed-card {
+  background: white;
+
+  padding: 35px;
+
+  border-radius: 15px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.completed-card h1 {
+  margin: 0 0 8px;
+}
+
+.completed-card p {
+  color: #6b7280;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  html,
+  body {
+    overflow: auto;
+  }
+
+  .topbar {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  .page {
+    display: flex;
+
+    flex-direction: column;
+
+    height: auto;
+
+    min-height: calc(100vh - 60px);
+
+    gap: 18px;
+
+    padding: 18px 22px 20px;
+
+    overflow: visible;
+  }
+
+  .video-section {
+    width: 100%;
+  }
+
+  .video-card {
+    width: 100%;
+
+    aspect-ratio: 1.6 / 1;
+
+    max-height: none;
+  }
+
+  .join-panel {
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    overflow: visible;
+  }
+
+  .join-content {
+    flex: none;
+
+    padding: 5px 0 15px;
+  }
+
+  .join-content h1 {
+    margin-bottom: 18px;
+  }
+
+  .host {
+    margin-bottom: 18px;
+  }
+
+  .before-begin {
+    max-width: 500px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 560px) {
+
+  html,
+  body {
+    overflow: auto;
+  }
+
+  .topbar {
+    height: 56px;
+
+    padding: 0 14px;
+  }
+
+  .brand {
+    font-size: 20px;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+
+    font-size: 24px;
+  }
+
+  .page {
+    gap: 12px;
+
+    padding: 12px 12px 15px;
+
+    min-height: calc(100vh - 56px);
+  }
+
+  .video-card {
+    aspect-ratio: 1.5 / 1;
+
+    border-radius: 16px;
+  }
+
+  .placeholder-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 22px;
+
+    margin-bottom: 8px;
+  }
+
+  .video-placeholder p {
+    font-size: 14px;
+  }
+
+  .video-placeholder small {
+    font-size: 11px;
+  }
+
+  .name-overlay {
+    left: 14px;
+    bottom: 12px;
+
+    font-size: 12px;
+  }
+
+  .device-controls {
+    gap: 5px;
+
+    margin-top: 6px;
+  }
+
+  .device-status {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 32px;
+
+    padding: 0 6px;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    gap: 5px;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .join-panel {
+    min-height: 0;
+    transform: translateY(20px);
+  }
+
+  .join-content {
+    padding: 3px 0 10px;
+  }
+
+  .join-content h1 {
+    margin-bottom: 14px;
+
+    font-size: 24px;
+  }
+
+  .host {
+    margin-bottom: 14px;
+  }
+
+  .host-avatar {
+    width: 40px;
+    height: 40px;
+
+    font-size: 17px;
+
+    margin-bottom: 6px;
+  }
+
+  .host p {
+    font-size: 11px;
+  }
+
+  .join-button {
+    height: 40px;
+
+    min-width: 95px;
+
+    font-size: 12px;
+  }
+
+  .before-begin {
+    max-width: 100%;
+
+    margin-bottom: 12px;
+
+    padding: 11px 13px;
+  }
+
+  .before-begin h3,
+  .interview-guidelines h3 {
+    font-size: 12px;
+  }
+
+  .before-begin li,
+  .interview-guidelines li {
+    font-size: 10px;
+
+    margin-bottom: 4px;
+  }
+
+  .recording-notice {
+    font-size: 10px;
+
+    margin-top: 7px;
+  }
+
+  .recording-description {
+    font-size: 9px;
+  }
+
+  .interview-guidelines {
+    margin-top: 10px;
+
+    padding-top: 10px;
+  }
+
+  .interview-header {
+    padding: 13px 15px;
+
+    gap: 10px;
+  }
+
+  .interview-header h2 {
+    font-size: 14px;
+  }
+
+  .interview-header div div {
+    font-size: 10px;
+  }
+
+  .countdown span {
+    font-size: 9px;
+  }
+
+  .countdown strong {
+    font-size: 16px;
+  }
+
+  .question-area {
+    padding: 15px;
+
+    overflow: hidden;
+  }
+
+  .question {
+    font-size: 17px;
+
+    line-height: 1.35;
+  }
+
+  .recording-section {
+    padding: 11px 15px;
+
+    flex-shrink: 0;
+  }
+
+  .record-button,
+  .stop-button,
+  .next-button {
+    height: 40px;
+
+    font-size: 12px;
+  }
+
+  .timer {
+    font-size: 19px;
+
+    margin-bottom: 8px;
+  }
+
+  .call-controls {
+    position: relative;
+
+    bottom: auto;
+
+    left: auto;
+    right: auto;
+
+    height: 40px;
+
+    margin-top: 6px;
+  }
+
+  .round-control,
+  .leave-button {
+    height: 34px;
+  }
+
+  .round-control {
+    width: 34px;
+  }
+
+  .completed-card {
+    width: calc(100% - 30px);
+
+    padding: 25px 18px;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .topbar {
+    height: 52px;
+  }
+
+  .brand {
+    font-size: 18px;
+  }
+
+  .brand-mark {
+    width: 33px;
+    height: 33px;
+
+    font-size: 22px;
+  }
+
+  .page {
+    min-height: calc(100vh - 52px);
+
+    padding: 9px 10px 12px;
+
+    gap: 9px;
+  }
+
+  .video-card {
+    aspect-ratio: 1.55 / 1;
+
+    border-radius: 14px;
+  }
+
+  .device-status {
+    height: 29px;
+
+    font-size: 9px;
+  }
+
+  .join-content h1 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+  }
+
+  .host {
+    margin-bottom: 10px;
+  }
+
+  .host-avatar {
+    width: 36px;
+    height: 36px;
+
+    font-size: 15px;
+  }
+
+  .join-button {
+    height: 37px;
+  }
+
+  .before-begin {
+    padding: 9px 11px;
+  }
+
+  .before-begin li,
+  .interview-guidelines li {
+    font-size: 9px;
+  }
+
+  .question {
+    font-size: 16px;
+  }
+
+  .record-button,
+  .stop-button,
+  .next-button {
+    height: 37px;
+  }
+}
+
+
+/* =========================
+   EMAIL MODAL
+========================= */
+
+.email-modal {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 15, 20, 0.55);
+
+    backdrop-filter: blur(5px);
+
+    z-index: 99999;
+}
+
+.email-modal-card {
+    width: 100%;
+    max-width: 410px;
+
+    padding: 32px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.18);
+
+    text-align: center;
+}
+
+.email-modal-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 15px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #fff1eb;
+
+    color: #FF5E14;
+
+    font-size: 23px;
+}
+
+.email-modal-card h2 {
+    margin: 0 0 8px;
+
+    color: #282631;
+
+    font-size: 23px;
+
+    font-weight: 500;
+}
+
+.email-modal-card p {
+    margin: 0 0 22px;
+
+    color: #8b8795;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+#candidateEmail {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 14px;
+
+    border: 1px solid #dedbe4;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    color: #282631;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+#candidateEmail:focus {
+    border-color: #FF5E14;
+
+    box-shadow: 0 0 0 3px rgba(255, 94, 20, 0.08);
+}
+
+#continueInterviewButton {
+    width: 100%;
+
+    height: 46px;
+
+    margin-top: 14px;
+
+    border: 0;
+
+    border-radius: 8px;
+
+    background: #FF5E14;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#continueInterviewButton:hover {
+    background: #e84f0b;
+}
+
+.email-error {
+    min-height: 18px;
+
+    margin-top: 7px;
+
+    color: #dc2626;
+
+    font-size: 11px;
+
+    text-align: left;
+}
+
+@media (max-width: 560px) {
+
+    .email-modal-card {
+        padding: 25px 20px;
+
+        border-radius: 15px;
+    }
+
+    .email-modal-card h2 {
+        font-size: 21px;
+    }
+}
+
+
+
+       #continueInterviewButton:disabled {
+    background: #d1d5db;
+    color: #6b7280;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#continueInterviewButton:disabled:hover {
+    background: #d1d5db;
+}
+
+
+
+
+
+</style>
+
+    <!-- main css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+
+
+<body>
+
+
+    <!-- Header Start -->
+    <div class="loader-wrapper">
+        <div class="loader">
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+   <!-- header srea start -->
+    <header class="header-one header-four header--sticky header-sticky-smooth">
+        <!-- header top -->
+        
+        <!-- header bottom -->
+        <!-- header style hear -->
+        <div class="header-main header-main-2">
+            <div class="container-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-mid-one-wrapper wrapper-two">
+                            <div class="logo-area">
+                                <a href="index.html">
+                                    <img src="assets/images/logo/dark-log.png" alt="logo" style="transform: scale(1.2); width: 150px;">
+                                </a>
+                            </div>
+                            <div class="nav-area">
+                                <ul class="mainmenu">
+                                    <li class="main-nav has-dropdow has-menu-child-ite mega-menu">
+                                        <a href="#">Interview Session</a>
+                                        <!--<div class="tmp-mega-menu with-home-demos">
+                                            <div class="wrapper demos-area-drop-down">
+                                                <div class="row row--0">
+                                                    <div class="col-lg-12">
+
+                                                        <ul class="mega-menu-item">
+                                                            <li>
+                                                                <a href="index.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/01.webp" alt="">
+                                                                </a>
+                                                                <a href="index.html">Construction Company <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-two.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/02.webp" alt="">
+                                                                </a>
+                                                                <a href="index-two.html">Home Renovation <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-eleven.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/11.webp" alt="">
+                                                                </a>
+                                                                <a href="index-eleven.html">Renovation Classic <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-twelve.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/12.webp" alt="">
+                                                                </a>
+                                                                <a href="index-twelve.html">Factory & Industrial <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="index-three.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/03.webp" alt="">
+                                                                </a>
+                                                                <a href="index-three.html">Construction Services <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-four.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/04.webp" alt="">
+                                                                </a>
+                                                                <a href="index-four.html">Elevate Builders <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-five.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/05.webp" alt="">
+                                                                </a>
+                                                                <a href="index-five.html">Modern Construction <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-six.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/06.webp" alt="">
+                                                                </a>
+                                                                <a href="index-six.html">Demo Construction <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-seven.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/07.webp" alt="">
+                                                                </a>
+                                                                <a href="index-seven.html">Construction Shop <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-eight.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/08.webp" alt="">
+                                                                </a>
+                                                                <a href="index-eight.html">Eco Build <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+
+                                                            <li>
+                                                                <a href="index-eighteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/18.webp" alt="">
+                                                                </a>
+                                                                <a href="index-eighteen.html">Industrial Solutions <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-nine.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/09.webp" alt="">
+                                                                </a>
+                                                                <a href="index-nine.html">Building & Structure <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-ten.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/10.webp" alt="">
+                                                                </a>
+                                                                <a href="index-ten.html">Horizon Constructions <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-thirteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/13.webp" alt="">
+                                                                </a>
+                                                                <a href="index-thirteen.html">Remodeling & Renovation <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-fourteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/14.webp" alt="">
+                                                                </a>
+                                                                <a href="index-fourteen.html">Architecture & Interior <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-fifteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/15.webp" alt="">
+                                                                </a>
+                                                                <a href="index-fifteen.html">Construction Video Showcase <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-sixteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/16.webp" alt="">
+                                                                </a>
+                                                                <a href="index-sixteen.html">Engineering Services <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-seventeen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/17.webp" alt="">
+                                                                </a>
+                                                                <a href="index-seventeen.html">Handyman Workshop <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-nineteen.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/19.webp" alt="">
+                                                                </a>
+                                                                <a href="index-nineteen.html">Investor Demo <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="index-twenty.html" class="thumbnail-demos">
+                                                                    <img loading="lazy" src="assets/images/demos/20.webp" alt="">
+                                                                </a>
+                                                                <a href="index-twenty.html">Carpenter Services <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span></a>
+                                                            </li>
+                                                        </ul>
+
+                                                        <div class="load-demo-btn-wrap ptb--10">
+                                                            <div class="load-demo-btn text-center">
+                                                                <span class="color-white b3">Scroll to view more 
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"></path>
+                                        </svg>
+                                    </span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>-->
+
+                                    </li>
+
+                                    <li class="main-nav has-dropdow has-menu-child-ite mega-menu">
+                                        <div class="tmp-mega-menu">
+                                            <div class="wrapper inner-page">
+                                                <div class="container">
+
+                                                    <div class="row g-5">
+
+                                                        <!-- Column 1 : About & Basics -->
+                                                        <div class="col-lg-3">
+                                                            <h3 class="inversweb-short-title">About & Basics</h3>
+                                                            <ul class="mega-menu-item with-list parent-nav">
+                                                                <li><a href="about.html">About Us</a></li>
+                                                                <li><a href="about-2.html">About Us 2</a></li>
+                                                                <li><a href="company-history.html">Company History</a></li>
+                                                                <li><a href="company-value.html">Company Value</a></li>
+                                                                <li><a href="our-vision.html">Our Vision</a></li>
+                                                                <li><a href="working-process.html">Working Process</a></li>
+                                                                <li><a href="safety.html">Safety</a></li>
+                                                                <li><a href="pricing.html">Pricing</a></li>
+                                                                <li><a href="button.html">Button</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <!-- Column 2 : Career & Jobs -->
+                                                        <div class="col-lg-3">
+                                                            <h3 class="inversweb-short-title">Career & Events</h3>
+                                                            <ul class="mega-menu-item with-list parent-nav">
+                                                                <li><a href="career.html">Career</a></li>
+                                                                <li><a href="career-2.html">Career 2</a></li>
+                                                                <li><a href="career-details.html">Career Details</a></li>
+                                                                <li><a href="career-details-2.html">Career Details 2</a></li>
+                                                                <li><a href="application.html">Apply Job</a></li>
+                                                                <li><a href="events.html">Our Events</a></li>
+                                                                <li><a href="events-list.html">Our Events List</a></li>
+                                                                <li><a href="event-details.html">Event Details</a></li>
+                                                                <li><a href="faq.html">Faq's</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <!-- Column 3 : Team & Media -->
+                                                        <div class="col-lg-3">
+                                                            <h3 class="inversweb-short-title">Team & Media</h3>
+                                                            <ul class="mega-menu-item with-list parent-nav">
+                                                                <li><a href="team.html">Team One</a></li>
+                                                                <li><a href="team-two.html">Team Two</a></li>
+                                                                <li><a href="team-three.html">Team Three</a></li>
+                                                                <li><a href="team-four.html">Team Four</a></li>
+                                                                <li><a href="team-details.html">Team Details</a></li>
+                                                                <li><a href="clients.html">Our Clients</a></li>
+                                                                <li><a href="gallery.html">Company Gallery</a></li>
+                                                                <li><a href="before-after.html">Before After</a></li>
+                                                                <li><a href="award.html">Awards</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <!-- Column 4 : Contact, Utility & Legal -->
+                                                        <div class="col-lg-3">
+                                                            <h3 class="inversweb-short-title">Contact & Legal</h3>
+                                                            <ul class="mega-menu-item with-list parent-nav">
+                                                                <li><a href="contact.html">Contact</a></li>
+                                                                <li><a href="contact-2.html">Contact 2</a></li>
+                                                                <li><a href="office-branch.html">Our Office Branch</a></li>
+                                                                <li><a href="sustainability.html">Sustainability</a></li>
+                                                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                                <li><a href="404.html">404</a></li>
+                                                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                                <li><a href="terms-condition.html">Terms & Condition</a></li>
+                                                                <li><a target="_blank" href="http://doc.inversweb.com/constx">Documentation</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                    <li class="main-nav has-dropdow has-menu-child-ite mega-menu position-relative">
+                                        <!--<div class="tmp-mega-menu width-small-mega">
+                                            <div class="wrapper">
+
+                                                <div class="row row--15">
+                                                    <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item">
+                                                        <h3 class="tmp-short-title">Service Layout</h3>
+                                                        <ul class="mega-menu-item mb--20">
+                                                            <li><a href="service.html">Service Default</a></li>
+                                                            <li><a href="service-two.html">Service Two Swiper</a></li>
+                                                            <li><a href="service-three.html">Service Card Style</a></li>
+                                                            <li><a href="service-three-four.html">Service Style Four</a></li>
+                                                            <li><a href="service-five.html">Service Swiper Flow</a></li>
+                                                            <li><a href="service-six.html">Service Style Fluid</a></li>
+
+                                                            <li><a href="#">Service Modern <span class="invers-badge-card">Coming</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-12 col-xl-6 col-xxl-6 single-mega-item">
+                                                        <h3 class="tmp-short-title">Service We Provide</h3>
+                                                        <ul class="mega-menu-item mb--20">
+                                                            <li><a href="service-details.html">Service Details</a></li>
+                                                            <li><a href="service-details-two.html">Service Details Two</a></li>
+                                                            <li><a href="service-details-slide.html">Service Details Slide</a></li>
+                                                            <li><a href="service-details-gallery.html">Service Details Gallery</a></li>
+                                                            <li><a href="service-details-video.html">Service Details Video</a></li>
+                                                            <li><a href="service-details-popup-video.html">Style Video Popup</a></li>
+                                                            <li><a href="service-details-classic.html">Style Classic <span class="invers-badge-card">Hot</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="mega-top-banner">
+                                                            <div class="content">
+                                                                <h4 class="title">Do You Need Custom Service?</h4>
+                                                                <p class="description">Complete Building Solutions for You, All Services in One Place.</p>
+                                                            </div>
+
+                                                            <a href="contact.html" class="tmp-btn btn-primary hover-icon-reverse btn-sm">
+                                                                <span class="icon-reverse-wrapper">
+                                        <span class="btn-text">Contact Us</span>
+                                                                <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                                <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>-->
+                                    </li>
+                                    <li class="main-nav has-dropdow has-menu-child-ite project-a-after">
+                                        <!--<ul class="submenu parent-nav">
+                                            <li><a href="portfolio.html">Project One</a></li>
+                                            <li><a href="portfolio-two.html">Project Two</a></li>
+                                            <li><a href="portfolio-three.html">Project Three</a></li>
+                                            <li class="has-third-lev">
+                                                <a href="#">Portfolio Details <i class="fa-solid fa-chevron-right"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="portfolio-details.html">Default Style</a></li>
+                                                    <li><a href="portfolio-details-2.html">Default Style Two</a></li>
+                                                    <li><a href="portfolio-details-before-after.html">Before After</a></li>
+                                                    <li><a href="portfolio-details-gallery.html">Formet Gallery</a></li>
+                                                    <li><a href="portfolio-details-video.html">Formet Video</a></li>
+                                                    <li><a href="portfolio-details-slide.html">Formet Slide</a></li>
+                                                    <li><a href="portfolio-details-video-popup.html">Video Popup</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>-->
+                                    </li>
+
+                                    <li class="main-nav has-dropdow has-menu-child-ite project-a-after">
+                                        <!--<ul class="submenu parent-nav">
+
+                                            <li><a href="shop.html">Shop <span class="invers-badge-card">Sale Anything</span></a>
+                                            </li>
+                                            <li><a href="shop-sidebar-left.html">Shop Sidebar</a>
+                                            </li>
+                                            <li><a href="shop-details.html">Shop Details</a>
+                                            </li>
+                                            <li><a href="cart.html">Cart</a>
+                                            </li>
+                                            <li><a href="checkout.html">Checkout</a>
+                                            </li>
+                                            <li><a href="wishlist.html">Wishlist</a>
+                                            </li>
+                                            <li><a href="compare.html">Compare</a>
+                                            </li>
+
+                                            <li class="has-third-lev">
+                                                <a href="#">Dashboard <i class="fa-solid fa-chevron-right"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="my-account.html">My Account</a></li>
+                                                    <li><a href="manage-profile.html">Manage Profile</a></li>
+                                                    <li><a href="my-order.html">My Order</a></li>
+                                                    <li><a href="address-booking.html">Address Booking</a></li>
+                                                    <li><a href="reward-point.html">Reward Point</a></li>
+                                                    <li><a href="follow-wishlist.html">Follow Wishlist</a></li>
+                                                    <li><a href="login.html">Login & Register</a></li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>-->
+                                    </li>
+
+
+                                    <!--<li class="main-nav has-dropdown mega-menu has-menu-child-item position-static">
+                                        <a href="#">Blog</a>
+                                        <div class="tmp-mega-menu width-small-mega mega-card-view">
+                                            <div class="wrapper">
+                                                <div class="row row--15">
+                                                    <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item ">
+                                                        <h3 class="tmp-short-title">Blog Styles</h3>
+                                                        <ul class="mega-menu-item">
+                                                            <li><a href="blog.html">Blog Grid</a></li>
+                                                            <li><a href="blog-list.html">Blog List</a></li>
+                                                            <li><a href="blog-list-2.html">Blog List Two</a></li>
+                                                            <li><a href="blog-list-3.html">Blog List Three</a></li>
+                                                            <li><a href="blog-bento.html">Blog Bento</a></li>
+                                                            <li><a href="blog-bento-2.html">Blog Bento Two</a></li>
+                                                            <li><a href="blog-bento-3.html">Blog Bento Three</a></li>
+                                                            <li><a href="blog-minimal.html">Blog Minimal</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
+                                                        <h3 class="tmp-short-title blink-live">Recent Post</h3>
+                                                        <ul class="mega-menu-item overflow-y-visiblity">
+                                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                                            <li><a href="blog-details-bg-image.html">Blog Details Bg Image</a></li>
+                                                            <li><a href="blog-details-gallery.html">Blog Details Gallery</a></li>
+                                                            <li><a href="blog-details-video.html">Blog Details Video</a></li>
+                                                            <li><a href="blog-details-video-popup.html">Blog Details Video Popup</a></li>
+                                                            <li><a href="blog-details-quote.html">Blog Details Quote</a></li>
+                                                            <li><a href="blog-details-classic.html">Blog Details Classic</a></li>
+                                                            <li><a href="blog-details-classic-video.html">Blog Classic Video</a></li>
+                                                            <li><a href="blog-details-right-sidebar.html">Blog Details Sidebar</a></li>
+                                                            <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
+                                                            <li><a href="#">Minimal Style<span class="invers-badge-card">Coming</span></a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
+                                                        <div class="tmp-ads-wrapper">
+                                                            <a class="d-block" href="blog-details.html"><img src="assets/images/blog/48.webp" alt="Solar Images"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>-->
+
+
+
+                                </ul>
+                            </div>
+                            <div class="header-right">
+                                <div class="cart-search-area">
+                                    <!-- <a href="javascript:void(0)" class="cart-btn cart cart-icon hover-bg-light">
+                                    <img src="assets/images/shop/cart.svg" alt="">
+                                    <span class="bg-green">2</span>
+                                </a> -->
+                                    <a class="search-btn hover-bg-light" href="#canvasSearch" data-bs-toggle="offcanvas">
+                                        <img src="assets/images/shop/search.svg" alt="">
+                                    </a>
+                                    <div class="dot-btn hover-bg-light">
+                                        <!-- <img src="assets/images/shop/dot.svg" alt=""> -->
+                                        <span class="offcanvas-trigger">
+                                        <span class="offcanvas-bars">
+                                            <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        </span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- single map area -->
+                                <div class="single-component">
+                                    <a href="contact.html" class="tmp-btn btn-primary button-flip btn-sm">
+                                        <span data-text="Get Started">Get Started</span>
+                                    </a>
+                                    <div class="menu-area d-block" id="menu-btn">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
+                                                <rect width="18" height="2" fill="#0C0A0A"></rect>
+                                                <rect y="7" width="18" height="2" fill="#0C0A0A"></rect>
+                                                <rect y="14" width="18" height="2" fill="#0C0A0A"></rect>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single map area -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header style hearm end -->
+    </header>
+    <!-- header srea end -->
+
+    <!-- Header End -->
+    <!-- Breadcrumb Start -->
+    <!-- tmp breadcrumba area start -->
+
+
+
+<!-- EMAIL MODAL -->
+<div class="email-modal" id="emailModal">
+
+    <div class="email-modal-card">
+
+        <div class="email-modal-icon">
+            ✉
+        </div>
+
+        <h2>Before you begin</h2>
+
+        <p>
+            Please enter your email address to start the interview.
+        </p>
+
+        <input
+            type="email"
+            id="candidateEmail"
+            placeholder="Enter your email address"
+            autocomplete="email"
+            required
+        >
+
+        <div class="email-error" id="emailError"></div>
+
+        <button
+    type="button"
+    id="continueInterviewButton"
+    disabled
+>
+    Not Available Yet
+</button>
+
+
+<script>
+  const button = document.getElementById("continueInterviewButton");
+
+  // 2 September 2026, 10:00 AM AWST (UTC+8)
+  const unlockTime = new Date("2026-09-02T10:05:00+08:00");
+
+  function checkButton() {
+    if (new Date() >= unlockTime) {
+      button.disabled = false;
+      button.textContent = "Join Interview";
+    }
+  }
+
+  // Check immediately, then every second
+  checkButton();
+  setInterval(checkButton, 1000);
+</script>
+
+
+    </div>
+
+</div>
+
+
+
+<main class="page">
+
+<section class="video-section">
+
+<div class="video-card">
+<video id="cameraPreview" autoplay playsinline muted></video>
+
+<div class="recording-indicator" id="recordingIndicator">
+  <span class="recording-dot"></span>
+  Recording
+</div>
+
+<div class="video-placeholder" id="videoPlaceholder">
+<div class="placeholder-icon">◉</div>
+<p>Camera preview</p>
+<small>Click "Join call" to start your Interview</small>
+</div>
+
+<div class="name-overlay">
+<span>You</span>
+<button class="more-button">•••</button>
+</div>
+</div>
+
+<div class="device-controls">
+
+<div class="device-status" id="cameraStatus">
+<span class="status-dot"></span>
+<span>Camera</span>
+</div>
+
+<div class="device-status" id="micStatus">
+<span class="status-dot"></span>
+<span>Microphone</span>
+</div>
+
+<div class="device-status" id="speakerStatus">
+<span class="status-dot"></span>
+<span>Speaker</span>
+</div>
+
+</div>
+
+</section>
+
+<aside class="join-panel" id="joinPanel">
+
+<div class="join-content" id="joinContent">
+
+<h1 id="panelTitle">Ready to join?</h1>
+
+<div class="host">
+<div class="host-avatar">A</div>
+<p id="hostText">Andrew is in the call</p>
+</div>
+
+<div class="before-begin">
+  <h3>Before you begin</h3>
+  <ul>
+    <li>This interview will take approximately 25 minutes.</li>
+    <li>Your answers will be recorded and reviewed by the hiring team.</li>
+    <li>Make sure you're in a quiet environment.</li>
+    <li>Speak clearly and take your time when answering.</li>
+    <li>Please complete the interview in one session.</li>
+  </ul>
+</div>
+
+<button class="join-button" id="joinButton">Join call</button>
+
+</div>
+
+<div class="interview-content" id="interviewContent">
+
+<div class="interview-header">
+
+<div class="panel-header">
+  <h2>Interviewer(Andrew)</h2>
+
+
+  <div class="progress" id="progress">Question 1 of 6</div>
+</div>
+
+<div class="countdown">
+<span>Time remaining</span>
+<strong id="countdown">25:00</strong>
+</div>
+
+</div>
+
+<div class="question-area">
+
+<div class="typing" id="typing">
+Interviewer is typing
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<div class="question" id="question"></div>
+
+</div>
+
+<div class="recording-section">
+
+<div class="timer" id="timer">00:00</div>
+
+<audio id="audioPlayer" controls></audio>
+
+<button class="record-button" id="recordButton">
+Record Answer
+</button>
+
+<button class="stop-button" id="stopButton">
+Stop Recording
+</button>
+
+<button class="next-button" id="nextButton">
+Next Question
+</button>
+
+<div class="interview-guidelines">
+  <h3>Interview guidelines</h3>
+  <ul>
+    <li>Take your time before answering.</li>
+    <li>Speak clearly and at a comfortable pace.</li>
+    <li>Try to answer each question completely.</li>
+    <li>Use specific examples where possible.</li>
+  </ul>
+</div>
+
+</div>
+
+</div>
+
+<!--<div class="call-controls" id="callControls">
+
+<button class="round-control" id="muteButton">
+🎙
+</button>
+
+<button class="round-control" id="cameraToggle">
+▣
+</button>
+
+<button class="leave-button" id="leaveButton">
+Leave
+</button>
+
+</div>-->
+
+</aside>
+
+</main>
+
+<div class="completed" id="completed">
+
+<div class="completed-card">
+
+<h1 id="completedTitle">Interview Completed</h1>
+
+<p id="completedMessage">
+Thank you for completing the interview.
+</p>
+
+</div>
+
+</div>
+
+<script>
+  const GOOGLE_APPS_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwUWuzW6HUDuPwjLLAXhD9MuIEDu3plGq-aX-BI8dwKmAfhI9SEydmZCbEPlH0Ud_E8/exec";
+
+const emailModal =
+  document.getElementById("emailModal");
+
+const candidateEmailInput =
+  document.getElementById("candidateEmail");
+
+const emailError =
+  document.getElementById("emailError");
+
+const continueInterviewButton =
+  document.getElementById("continueInterviewButton");
+
+let candidateEmail = "";
+
+
+
+
+    const questions=["Tell me about yourself and your professional background.","What attracted you to this position?","Can you describe a challenging problem you faced at work and how you solved it?","What would you consider to be your greatest professional strength?","Tell me about a time you had to work under pressure.","Why do you think you would be a good fit for this role?"];
+
+const joinButton=document.getElementById("joinButton");
+const joinPanel=document.getElementById("joinPanel");
+const videoCard=document.querySelector(".video-card");
+const joinContent=document.getElementById("joinContent");
+const interviewContent=document.getElementById("interviewContent");
+const cameraPreview=document.getElementById("cameraPreview");
+const videoPlaceholder=document.getElementById("videoPlaceholder");
+const question=document.getElementById("question");
+const typing=document.getElementById("typing");
+const progress=document.getElementById("progress");
+const recordButton=document.getElementById("recordButton");
+const stopButton=document.getElementById("stopButton");
+const nextButton=document.getElementById("nextButton");
+const timer=document.getElementById("timer");
+const audioPlayer=document.getElementById("audioPlayer");
+const muteButton=document.getElementById("muteButton");
+const cameraToggle=document.getElementById("cameraToggle");
+const leaveButton=document.getElementById("leaveButton");
+const completed=document.getElementById("completed");
+const completedTitle=document.getElementById("completedTitle");
+const completedMessage=document.getElementById("completedMessage");
+const cameraStatus=document.getElementById("cameraStatus");
+const micStatus=document.getElementById("micStatus");
+const speakerStatus=document.getElementById("speakerStatus");
+const countdown=document.getElementById("countdown");
+const countdownBox=document.querySelector(".countdown");
+
+
+let stream=null;
+let mediaRecorder=null;
+let audioChunks=[];
+let currentQuestion=0;
+let recordingSeconds=0;
+let timerInterval=null;
+let countdownInterval=null;
+let currentAudioURL=null;
+let micEnabled=true;
+let cameraEnabled=true;
+let interviewSeconds=25*60;
+let audioContext = null;
+
+function initAudio() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+
+  if (audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+}
+
+function playSound(type) {
+  initAudio();
+
+  const oscillator = audioContext.createOscillator();
+  const gain = audioContext.createGain();
+  const now = audioContext.currentTime;
+
+  oscillator.connect(gain);
+  gain.connect(audioContext.destination);
+
+  if (type === "join") {
+    oscillator.frequency.setValueAtTime(600, now);
+    oscillator.frequency.setValueAtTime(850, now + 0.08);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.12, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
+    oscillator.start(now);
+    oscillator.stop(now + 0.2);
+  }
+
+  if (type === "ready") {
+    oscillator.frequency.setValueAtTime(700, now);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.08, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.15);
+    oscillator.start(now);
+    oscillator.stop(now + 0.17);
+  }
+
+  if (type === "record") {
+    oscillator.frequency.setValueAtTime(500, now);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.1, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+    oscillator.start(now);
+    oscillator.stop(now + 0.14);
+  }
+
+  if (type === "stop") {
+    oscillator.frequency.setValueAtTime(500, now);
+    oscillator.frequency.exponentialRampToValueAtTime(250, now + 0.12);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.1, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.15);
+    oscillator.start(now);
+    oscillator.stop(now + 0.17);
+  }
+
+  if (type === "next") {
+    oscillator.frequency.setValueAtTime(550, now);
+    oscillator.frequency.setValueAtTime(750, now + 0.08);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.07, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.15);
+    oscillator.start(now);
+    oscillator.stop(now + 0.17);
+  }
+
+  if (type === "warning") {
+    oscillator.frequency.setValueAtTime(800, now);
+    oscillator.frequency.setValueAtTime(800, now + 0.15);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.12, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+    oscillator.start(now);
+    oscillator.stop(now + 0.2);
+  }
+}
+
+function setStatus(element,working){
+element.classList.remove("active","inactive");
+element.classList.add(working?"active":"inactive");
+}
+
+function checkSpeaker(){
+if(typeof HTMLMediaElement!=="undefined"&&"setSinkId" in HTMLMediaElement.prototype)return true;
+return true;
+}
+
+async function startCall(){
+try{
+initAudio();
+playSound("join");
+
+stream=await navigator.mediaDevices.getUserMedia({video:true,audio:true});
+
+cameraPreview.srcObject=stream;
+cameraPreview.style.display="block";
+videoPlaceholder.style.display="none";
+
+const cameraTrack=stream.getVideoTracks()[0];
+const micTrack=stream.getAudioTracks()[0];
+
+setStatus(cameraStatus,!!cameraTrack&&cameraTrack.readyState==="live");
+setStatus(micStatus,!!micTrack&&micTrack.readyState==="live");
+setStatus(speakerStatus,checkSpeaker());
+
+joinContent.style.display="none";
+interviewContent.style.display="flex";
+joinPanel.classList.add("joined");
+videoCard.classList.add("recording");
+
+startCountdown();
+showQuestion();
+
+}catch(error){
+console.error(error);
+setStatus(cameraStatus,false);
+setStatus(micStatus,false);
+setStatus(speakerStatus,checkSpeaker());
+alert("Please allow access to your camera and microphone to join the interview.");
+}
+}
+
+joinButton.addEventListener("click", () => {
+
+    emailError.textContent = "";
+
+    emailModal.style.display = "flex";
+
+    setTimeout(() => {
+        candidateEmailInput.focus();
+    }, 100);
+
+});
+
+
+continueInterviewButton.addEventListener("click", () => {
+
+    const email = candidateEmailInput.value.trim();
+
+    if (!email) {
+        emailError.textContent =
+            "Please enter your email address.";
+        return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailError.textContent =
+            "Please enter a valid email address.";
+        return;
+    }
+
+    candidateEmail = email.toLowerCase();
+
+    emailModal.style.display = "none";
+
+    startCall();
+});
+
+
+candidateEmailInput.addEventListener("keydown", (event) => {
+
+    if (event.key === "Enter") {
+        continueInterviewButton.click();
+    }
+
+});
+
+
+async function uploadRecordingToDrive(audioBlob, questionNumber, questionText) {
+
+    if (!candidateEmail) {
+        console.error("Candidate email is missing.");
+        return false;
+    }
+
+    try {
+
+        console.log(
+            `Uploading answer ${questionNumber}...`
+        );
+
+        const base64Audio =
+            await blobToBase64(audioBlob);
+
+        const payload = {
+            email: candidateEmail,
+
+            questionNumber: questionNumber,
+
+            question: questionText,
+
+            mimeType: audioBlob.type || "audio/webm",
+
+            audio: base64Audio
+        };
+
+        await fetch(GOOGLE_APPS_SCRIPT_URL, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+
+            body: JSON.stringify(payload),
+
+            mode: "no-cors"
+
+        });
+
+        console.log(
+            `Answer ${questionNumber} uploaded.`
+        );
+
+        return true;
+
+    } catch (error) {
+
+        console.error(
+            "Upload failed:",
+            error
+        );
+
+        return false;
+    }
+}
+
+
+
+function blobToBase64(blob) {
+
+    return new Promise((resolve, reject) => {
+
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+
+            const base64 =
+                reader.result.split(",")[1];
+
+            resolve(base64);
+        };
+
+        reader.onerror = reject;
+
+        reader.readAsDataURL(blob);
+    });
+}
+
+
+
+
+function showQuestion(){
+clearInterval(timerInterval);
+question.textContent="";
+typing.style.display="block";
+recordButton.style.display="none";
+stopButton.style.display="none";
+nextButton.style.display="none";
+timer.style.display="none";
+audioPlayer.style.display="none";
+recordingSeconds=0;
+timer.textContent="00:00";
+progress.textContent=`Question ${currentQuestion+1} of ${questions.length}`;
+
+setTimeout(()=>{
+typing.style.display="none";
+typeQuestion(questions[currentQuestion]);
+},1000);
+}
+
+function typeQuestion(text){
+let index=0;
+question.textContent="";
+function type(){
+if(index<text.length){
+question.textContent+=text.charAt(index);
+index++;
+setTimeout(type,30);
+}else{
+recordButton.style.display="block";
+playSound("ready");
+}
+}
+type();
+}
+
+recordButton.addEventListener("click",()=>{
+if(!stream){
+alert("Please join the call first.");
+return;
+}
+
+const microphoneTrack=stream.getAudioTracks()[0];
+
+if(!microphoneTrack||microphoneTrack.readyState!=="live"){
+setStatus(micStatus,false);
+alert("Your microphone is no longer available.");
+return;
+}
+
+if(mediaRecorder&&mediaRecorder.state==="recording")return;
+
+const recordingStream=new MediaStream([microphoneTrack]);
+
+try{
+mediaRecorder=new MediaRecorder(recordingStream);
+}catch(error){
+console.error(error);
+alert("Your browser does not support audio recording.");
+return;
+}
+
+audioChunks=[];
+
+mediaRecorder.ondataavailable=event=>{
+if(event.data.size>0)audioChunks.push(event.data);
+};
+
+mediaRecorder.onstop = async () => {
+
+    const audioBlob = new Blob(
+        audioChunks,
+        { type: "audio/webm" }
+    );
+
+    if (currentAudioURL) {
+        URL.revokeObjectURL(currentAudioURL);
+    }
+
+    currentAudioURL =
+        URL.createObjectURL(audioBlob);
+
+    audioPlayer.src = currentAudioURL;
+
+    audioPlayer.style.display = "block";
+
+    // Disable Next while uploading
+    nextButton.disabled = true;
+
+    nextButton.textContent =
+        "Uploading Answer...";
+
+    const uploaded =
+        await uploadRecordingToDrive(
+            audioBlob,
+            currentQuestion + 1,
+            questions[currentQuestion]
+        );
+
+    nextButton.disabled = false;
+
+    nextButton.textContent =
+        "Next Question";
+
+    if (uploaded) {
+
+        nextButton.style.display =
+            "block";
+
+    } else {
+
+        alert(
+            "Your answer could not be uploaded. " +
+            "Please try recording the answer again."
+        );
+
+    }
+};
+
+
+mediaRecorder.start();
+playSound("record");
+
+recordButton.style.display="none";
+stopButton.style.display="block";
+timer.style.display="block";
+recordingSeconds=0;
+updateTimer();
+clearInterval(timerInterval);
+timerInterval=setInterval(updateTimer,1000);
+});
+
+stopButton.addEventListener("click",()=>{
+if(mediaRecorder&&mediaRecorder.state==="recording"){
+mediaRecorder.stop();
+playSound("stop");
+}
+stopButton.style.display="none";
+clearInterval(timerInterval);
+});
+
+function updateTimer(){
+recordingSeconds++;
+const minutes=Math.floor(recordingSeconds/60).toString().padStart(2,"0");
+const seconds=(recordingSeconds%60).toString().padStart(2,"0");
+timer.textContent=`${minutes}:${seconds}`;
+}
+
+nextButton.addEventListener("click",()=>{
+playSound("next");
+
+if(mediaRecorder&&mediaRecorder.state==="recording")mediaRecorder.stop();
+
+currentQuestion++;
+
+if(currentQuestion>=questions.length){
+finishInterview("Interview Completed","Thank you for completing the interview.");
+return;
+}
+
+showQuestion();
+});
+
+function startCountdown(){
+interviewSeconds=25*60;
+updateCountdown();
+clearInterval(countdownInterval);
+countdownInterval=setInterval(()=>{
+interviewSeconds--;
+updateCountdown();
+
+if(interviewSeconds<=0){
+clearInterval(countdownInterval);
+
+if(mediaRecorder&&mediaRecorder.state==="recording")mediaRecorder.stop();
+
+finishInterview("Time's Up","The 25-minute interview time has ended.");
+}
+},1000);
+}
+
+function updateCountdown(){
+const minutes=Math.floor(interviewSeconds/60).toString().padStart(2,"0");
+const seconds=(interviewSeconds%60).toString().padStart(2,"0");
+countdown.textContent=`${minutes}:${seconds}`;
+
+if(interviewSeconds<=5*60){
+countdownBox.classList.add("warning");
+}else{
+countdownBox.classList.remove("warning");
+}
+}
+
+muteButton.addEventListener("click",()=>{
+if(!stream)return;
+
+micEnabled=!micEnabled;
+
+stream.getAudioTracks().forEach(track=>{
+track.enabled=micEnabled;
+});
+
+muteButton.textContent=micEnabled?"🎙":"🔇";
+setStatus(micStatus,micEnabled);
+
+});
+
+cameraToggle.addEventListener("click",()=>{
+if(!stream)return;
+
+cameraEnabled=!cameraEnabled;
+
+stream.getVideoTracks().forEach(track=>{
+track.enabled=cameraEnabled;
+});
+
+cameraToggle.textContent=cameraEnabled?"▣":"▢";
+setStatus(cameraStatus,cameraEnabled);
+});
+
+leaveButton.addEventListener("click",()=>{
+if(confirm("Are you sure you want to leave the interview?")){
+finishInterview("Interview Ended","The interview was ended before all questions were completed.");
+}
+});
+
+function finishInterview(title,message){
+clearInterval(timerInterval);
+clearInterval(countdownInterval);
+
+if(mediaRecorder&&mediaRecorder.state==="recording")mediaRecorder.stop();
+
+if(stream){
+stream.getTracks().forEach(track=>track.stop());
+stream=null;
+}
+
+if(currentAudioURL){
+URL.revokeObjectURL(currentAudioURL);
+currentAudioURL=null;
+}
+
+videoCard.classList.remove("recording");
+
+document.querySelector(".page").style.display="none";
+completedTitle.textContent=title;
+completedMessage.textContent=message;
+completed.style.display="flex";
+}
+
+setStatus(cameraStatus,false);
+setStatus(micStatus,false);
+setStatus(speakerStatus,checkSpeaker());
+
+</script>
+
+
+    
+
+
+    <!-- jquery js -->
+    <script src="assets/js/plugins/jquery-3.7.1.min.js" defer></script>
+    <!-- jquery ui -->
+
+    <script src="assets/js/vendor/jqueryui.js" defer></script>
+
+    <!-- swiper js -->
+    <script src="assets/js/plugins/swiper.js" defer></script>
+    <!-- metismenu js -->
+    <script src="assets/js/plugins/metismenu.js" defer></script>
+    <!-- waypoint js -->
+    <script src="assets/js/vendor/waypoint.js" defer></script>
+    <!-- waw -->
+    <script src="assets/js/vendor/waw.js" defer></script>
+    <!-- jquery ui js -->
+
+    <!-- magnifying ui js -->
+    <script src="assets/js/plugins/magnific-popup.js" defer></script>
+    <!-- sal animation -->
+    <script src="assets/js/vendor/sal.min.js" defer></script>
+    <!-- bootstrap JS -->
+    <script src="assets/js/plugins/bootstrap.min.js" defer></script>
+    <!-- contact form js -->
+    <script src="assets/js/plugins/contact-form.js" defer></script>
+    <!-- Smooth Scroll js -->
+    <script src="assets/js/plugins/smooth-scroll.js" defer></script>
+
+
+    <!-- gsap js -->
+    <!-- <script src="assets/js/plugins/gsap.min.js" defer></script>
+    <script src="assets/js/plugins/scrolltigger.js" defer></script>
+    <script src="assets/js/plugins/split-text.js" defer></script> -->
+
+
+    <script src="assets/js/plugins/scroll-paralax.js" defer></script>
+
+    <!-- odometer js -->
+    <script src="assets/js/plugins/odometer.js" defer></script>
+    <!-- main js -->
+    <script src="assets/js/main.js" defer></script>
+
+    <!-- header style two End -->
+</body>
+
+</html>
